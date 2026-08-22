@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Generator Tool 📝</title>
+    <meta name="description" content="ইনস্টাগ্রাম ও ফেসবুকের জন্য স্টাইলিশ বায়ো আইডিয়া। (ক্লিক করে কপি করুন)">
+    <link rel="canonical" href="https://gameforge-official.netlify.app/bio-generator.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNFJWK9WPJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TNFJWK9WPJ');
+    </script>
+    <style>
+        :root {
+            --bg-dark: #0a0e1a;
+            --card-bg: #121829;
+            --border-color: #1e293b;
+            --primary-accent: #3b82f6;
+            --purple-accent: #8b5cf6;
+            --text-main: #e2e8f0;
+            --text-sub: #94a3b8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Hind Siliguri', sans-serif; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+        header { background: rgba(18, 24, 41, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); padding: 15px 20px; position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; gap: 15px; flex-wrap: wrap; }
+        .nav-links a { color: var(--text-sub); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary-accent); }
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; flex: 1; width: 100%; }
+        .hero-title { text-align: center; font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; background: linear-gradient(135deg, #ffffff, var(--text-sub)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-desc { text-align: center; color: var(--text-sub); margin-bottom: 30px; font-size: 1.05rem; }
+        .card-box { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .input-box { width: 100%; padding: 14px 18px; background: #080c14; border: 1px solid var(--border-color); border-radius: 10px; color: #fff; font-size: 1rem; margin-bottom: 15px; outline: none; transition: 0.3s; }
+        .input-box:focus { border-color: var(--primary-accent); box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 20px; }
+        .item-card { background: #0d1322; border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; text-align: center; font-size: 1.05rem; cursor: pointer; transition: 0.2s; position: relative; word-break: break-all; }
+        .item-card:hover { border-color: var(--primary-accent); transform: translateY(-2px); background: #151d33; }
+        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--purple-accent); color: #fff; padding: 10px 25px; border-radius: 30px; font-weight: 600; display: none; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        footer { background: #060912; border-top: 1px solid var(--border-color); text-align: center; padding: 20px; color: var(--text-sub); margin-top: 50px; font-size: 0.9rem; }
+        footer a { color: var(--primary-accent); text-decoration: none; margin: 0 8px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">GAMEFORGE</a>
+            <div class="nav-links">
+                <a href="index.html">🏠 Home</a>
+                <a href="vip-name-generator.html">👑 VIP Names</a>
+                <a href="symbol-library.html">✨ Symbols</a>
+                <a href="bio-generator.html">📝 Bio Generator</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="hero-title">Bio Generator Tool 📝</h1>
+        <p class="hero-desc">ইনস্টাগ্রাম ও ফেসবুকের জন্য স্টাইলিশ বায়ো আইডিয়া। (ক্লিক করে কপি করুন)</p>
+        
+        <div class="card-box">
+            <div class="grid-container">
+            <div class="item-card" onclick="copyText('✦ Welcome to my Profile ✦\n👑 King of my own world 👑\n🎯 Gamer | Creator | Dreamer')">✦ Welcome to my Profile ✦<br>👑 King of my own world 👑</div>
+            <div class="item-card" onclick="copyText('❖ Simple Guy 🖤\n❖ Music Lover 🎧\n❖ Living Life on My Own Terms ⚡')">❖ Simple Guy 🖤<br>❖ Music Lover 🎧</div>
+            <div class="item-card" onclick="copyText('🔥 Official Account 🔥\n🏆 Pro Gamer in Free Fire\n💪 Hard Work > Talent')">🔥 Official Account 🔥<br>🏆 Pro Gamer</div>
+            <div class="item-card" onclick="copyText('👑 Queen of my World 👑\n✨ Cute & Classy\n🚫 Don't Trust Anyone')">👑 Queen of my World 👑<br>✨ Cute & Classy</div>
+        </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">অনুলিপি করা হয়েছে! (Copied!)</div>
+
+    <footer>
+        <p>© 2026 GameForge. All Rights Reserved.</p>
+        <p style="margin-top: 8px;">
+            <a href="about.html">About Us</a> | 
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms</a> | 
+            <a href="contact.html">Contact</a> | 
+            <a href="sitemap.html">Sitemap</a>
+        </p>
+    </footer>
+
+    <script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 2000);
+            });
+        }
+    </script>
+    
+</body>
+</html>
