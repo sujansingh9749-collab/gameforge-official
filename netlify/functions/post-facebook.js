@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 // প্রায় ৫০টি আকর্ষণীয় ও স্টাইলিশ নিকনেমের বিশাল লিস্ট
 const nicknames = [
     "🔥 𝔇𝔞𝔯𝔨 𝔏𝔢𝔤𝔢𝔫𝔡 🔥",
@@ -25,7 +23,7 @@ const nicknames = [
     "🌀 𝓒𝔂𝓬𝓵𝓸𝓷𝓮 🌀",
     "🐯 𝓣𝓲𝓰𝓮𝓻 𝓚𝓲𝓷𝓰 🐯",
     "⚡ 𝓡𝓪𝓲𝓭𝓮𝓻 ⚡",
-    "🌠 𝓖𝓪𝓵𝓪𝔁𝔂 𝓧 🌠",
+    "🌠 𝓖𝓪𝓵𝓪𝓁𝔂 𝓧 🌠",
     "🗡️ 𝓑𝓵𝓪𝓭𝓮 𝓡𝓾𝓷𝓷𝓮𝓻 🗡️",
     "💥 𝔅𝔬𝔪𝔟𝔞𝔯𝔡𝔦𝔢𝔯 💥",
     "🛡️ 𝔖𝔥𝔦𝔢𝔩𝔡 𝔚𝔞𝔩𝔩 🛡️",
@@ -37,7 +35,7 @@ const nicknames = [
     "🦅 𝔈𝔞𝔤𝔩𝔢 𝔈𝔶𝔢 🦅",
     "💀 𝔖𝔲𝔭𝔯𝔢𝔪𝔢 𝔖𝔨𝔲𝔩𝔩 💀",
     "⚡ 𝕋𝕙𝕦𝕟𝕕𝕖𝕣𝕓𝕠𝕝𝕥 ⚡",
-    "🛡️ 𝔗𝔦𝔱𝔞𝫞 🛡️",
+    "🛡️ 𝔗𝔦𝔱𝔞𝔫 🛡️",
     "🔥 ℭ𝔥𝔞𝔬𝔰 🔥",
     "🌟 𝔈𝔠𝔩𝔦𝔭𝔰𝔢 🌟",
     "🎯 𝔅𝔲𝔩𝔩𝔢𝔱 𝔓𝔯𝔬𝔬𝔣 🎯",
@@ -45,7 +43,7 @@ const nicknames = [
     "⚡ 𝔙𝔢𝔫𝔬𝔪 ⚡",
     "🌪️ ℭ𝔶𝔠𝔲𝔩𝔬𝔫𝔢 𝔛 🌪️",
     "🗡️ 𝔖𝔱𝔯𝔦𝔨𝔢𝔯 🗡️",
-    "💎 ℭ𝔯𝔶𝔰𝔱𝔞𝔩 𝔛 💎",
+    "💎 ℭ𝔯𝔶𝔰𝔱𝔞𝓩 𝔛 💎",
     "🔥 ℌ𝔢ℓℓ𝓯𝔦𝔯𝔢 🔥",
     "⚡ 𝔖𝔭𝔞𝔯𝔨 ⚡",
     "🦅 𝔉𝔞𝔩𝔠𝔬𝔫 𝔛 🦅",
@@ -64,6 +62,7 @@ exports.handler = async (event, context) => {
             return { statusCode: 500, body: "Credentials missing" };
         }
 
+        // তারিখ অনুযায়ী সিরিয়াল মেইনটেইন করার লজিক
         const daysSinceEpoch = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
         const index = daysSinceEpoch % nicknames.length;
         const selectedNickname = nicknames[index];
@@ -94,4 +93,9 @@ exports.handler = async (event, context) => {
         console.error("Error:", error.message);
         return { statusCode: 500, body: error.message };
     }
+};
+
+// প্রতিদিন সকাল ১০টায় শিডিউল করার কনফিগারেশন
+exports.config = {
+    schedule: "0 10 * * *"
 };
