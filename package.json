@@ -1,0 +1,9 @@
+{
+  "name": "gameforge-official",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.0",
+    "node-fetch": "^2.7.0"
+  }
+}
