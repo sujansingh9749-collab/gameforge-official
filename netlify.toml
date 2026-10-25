@@ -1,0 +1,84 @@
+# netlify.toml
+# Purpose: fix duplicate-URL indexing (e.g. /contact AND /contact.html both
+# getting indexed by Google as separate pages). Since canonical tags and
+# sitemap.xml already point to the .html versions, we 301-redirect the
+# extension-less ("pretty URL") versions to their .html counterparts so
+# there is only ONE canonical URL per page.
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/disclaimer"
+  to = "/disclaimer.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy-policy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sitemap"
+  to = "/sitemap.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/vip-name-generator"
+  to = "/vip-name-generator.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/symbol-library"
+  to = "/symbol-library.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bio-generator"
+  to = "/bio-generator.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/free-fire-stylish-name-bangla"
+  to = "/free-fire-stylish-name-bangla.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pubg-bgmi-stylish-name-bangla"
+  to = "/pubg-bgmi-stylish-name-bangla.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/instagram-bio-symbols-bangla"
+  to = "/instagram-bio-symbols-bangla.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/stylish-name-for-girls-bangla"
+  to = "/stylish-name-for-girls-bangla.html"
+  status = 301
+  force = true
