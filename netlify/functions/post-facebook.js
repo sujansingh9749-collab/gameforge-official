@@ -37,7 +37,7 @@ const nicknames = [
     "🦅 𝔈𝔞𝔤𝔩𝔢 𝔈𝔶𝔢 🦅",
     "💀 𝔖𝔲𝔭𝔯𝔢𝔪𝔢 𝔖𝔨𝔲𝔩𝔩 💀",
     "⚡ 𝕋𝕙𝕦𝕟𝕕𝕖𝕣𝕓𝕠𝕝𝕥 ⚡",
-    "🛡️ 𝔗𝔦𝔱𝔞𝔫 🛡️",
+    "🛡️ 𝔗𝔦𝔱𝔞𝫞 🛡️",
     "🔥 ℭ𝔥𝔞𝔬𝔰 🔥",
     "🌟 𝔈𝔠𝔩𝔦𝔭𝔰𝔢 🌟",
     "🎯 𝔅𝔲𝔩𝔩𝔢𝔱 𝔓𝔯𝔬𝔬𝔣 🎯",
@@ -64,12 +64,10 @@ exports.handler = async (event, context) => {
             return { statusCode: 500, body: "Credentials missing" };
         }
 
-        // তারিখ অনুযায়ী সিরিয়াল মেইনটেইন করার লজিক (যাতে কোনো নাম রিপিট না হয়)
         const daysSinceEpoch = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
         const index = daysSinceEpoch % nicknames.length;
         const selectedNickname = nicknames[index];
 
-        // ইংরেজি ক্যাপশন এবং ওয়েবসাইট লিংক
         const postMessage = `🔥 Make your Free Fire, PUBG or any gaming profile more attractive with today's best stylish nickname! 🎮✨\n\n📌 Today's Special Name:\n${selectedNickname}\n\n👇 Visit our website to generate your favorite name for free:\n🌐 https://gameforge-official.netlify.app\n\n#GameForge #StylishName #FreeFireName #PubgName #GamingCommunity #StylishNickname`;
 
         const responseUrl = `https://graph.facebook.com/v18.0/${PAGE_ID}/feed`;
@@ -96,9 +94,4 @@ exports.handler = async (event, context) => {
         console.error("Error:", error.message);
         return { statusCode: 500, body: error.message };
     }
-};
-
-// প্রতিদিন সকাল ১০টায় শিডিউল করার কনফিগারেশন
-exports.config = {
-    schedule: "0 10 * * *"
 };
