@@ -1,148 +1,335 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bio Generator Tool 📝</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%8E%AE</text></svg>">
-    <meta name="description" content="ইনস্টাগ্রাম ও ফেসবুকের জন্য স্টাইলিশ বায়ো আইডিয়া। (ক্লিক করে কপি করুন)">
-    <link rel="canonical" href="https://gameforge-official.netlify.app/bio-generator.html">
-    <meta property="og:title" content="Bio Generator Tool 📝">
-    <meta property="og:description" content="ইনস্টাগ্রাম ও ফেসবুকের জন্য স্টাইলিশ বায়ো আইডিয়া। (ক্লিক করে কপি করুন)">
-    <meta property="og:image" content="https://gameforge-official.netlify.app/og-image.png">
-    <meta property="og:url" content="https://gameforge-official.netlify.app/bio-generator.html">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bio Generator Tool 📝">
-    <meta name="twitter:description" content="ইনস্টাগ্রাম ও ফেসবুকের জন্য স্টাইলিশ বায়ো আইডিয়া। (ক্লিক করে কপি করুন)">
-    <meta name="twitter:image" content="https://gameforge-official.netlify.app/og-image.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNFJWK9WPJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TNFJWK9WPJ');
-    </script>
-    <style>
-        :root {
-            --bg-dark: #0a0e1a;
-            --card-bg: #121829;
-            --border-color: #1e293b;
-            --primary-accent: #3b82f6;
-            --purple-accent: #8b5cf6;
-            --text-main: #e2e8f0;
-            --text-sub: #94a3b8;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Hind Siliguri', sans-serif; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
-        header { background: rgba(18, 24, 41, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); padding: 15px 20px; position: sticky; top: 0; z-index: 100; }
-        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
-        .nav-links { display: flex; gap: 15px; flex-wrap: wrap; }
-        .nav-links a { color: var(--text-sub); text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary-accent); }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; flex: 1; width: 100%; }
-        .hero-title { text-align: center; font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; background: linear-gradient(135deg, #ffffff, var(--text-sub)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-desc { text-align: center; color: var(--text-sub); margin-bottom: 30px; font-size: 1.05rem; }
-        .card-box { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .input-box { width: 100%; padding: 14px 18px; background: #080c14; border: 1px solid var(--border-color); border-radius: 10px; color: #fff; font-size: 1rem; margin-bottom: 15px; outline: none; transition: 0.3s; }
-        .input-box:focus { border-color: var(--primary-accent); box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 20px; }
-        .item-card { background: #0d1322; border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; text-align: center; font-size: 1.05rem; cursor: pointer; transition: 0.2s; position: relative; word-break: break-all; }
-        .item-card:hover { border-color: var(--primary-accent); transform: translateY(-2px); background: #151d33; }
-        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--purple-accent); color: #fff; padding: 10px 25px; border-radius: 30px; font-weight: 600; display: none; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-        footer { background: #060912; border-top: 1px solid var(--border-color); text-align: center; padding: 20px; color: var(--text-sub); margin-top: 50px; font-size: 0.9rem; }
-        footer a { color: var(--primary-accent); text-decoration: none; margin: 0 8px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ইনস্টাগ্রাম ও ফেসবুক বায়ো আইডিয়া ২০২৬ | Instagram Bio Ideas (২৫+ বায়ো)</title>
+<meta name="description" content="ইনস্টাগ্রাম ও ফেসবুকের জন্য বাংলা ও ইংরেজি স্টাইলিশ বায়ো আইডিয়া। গেমার, অ্যাটিটিউড, মেয়েদের ও ছোট ক্যাপশন বায়ো এক ট্যাপে কপি করুন। Instagram and Facebook bio ideas in Bangla and English: 25+ ready bios. Copy and paste free. Instagram and Facebook bio ideas in Bangla and English: 25+ ready bios. Copy and paste free.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://gameforge-official.netlify.app/bio-generator.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%8E%AE</text></svg>">
+<meta property="og:title" content="ইনস্টাগ্রাম ও ফেসবুক বায়ো আইডিয়া ২০২৬ | Instagram Bio Ideas (২৫+ বায়ো)">
+<meta property="og:description" content="ইনস্টাগ্রাম ও ফেসবুকের জন্য বাংলা ও ইংরেজি স্টাইলিশ বায়ো আইডিয়া। গেমার, অ্যাটিটিউড, মেয়েদের ও ছোট ক্যাপশন বায়ো এক ট্যাপে কপি করুন। Instagram and Facebook bio ideas in Bangla and English: 25+ ready bios. Copy and paste free. Instagram and Facebook bio ideas in Bangla and English: 25+ ready bios. Copy and paste free.">
+<meta property="og:image" content="https://gameforge-official.netlify.app/og-image.png">
+<meta property="og:url" content="https://gameforge-official.netlify.app/bio-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="bn_BD">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ইনস্টাগ্রাম ও ফেসবুক বায়ো আইডিয়া ২০২৬ | Instagram Bio Ideas (২৫+ বায়ো)">
+<meta name="twitter:description" content="ইনস্টাগ্রাম ও ফেসবুকের জন্য বাংলা ও ইংরেজি স্টাইলিশ বায়ো আইডিয়া। গেমার, অ্যাটিটিউড, মেয়েদের ও ছোট ক্যাপশন বায়ো এক ট্যাপে কপি করুন। Instagram and Facebook bio ideas in Bangla and English: 25+ ready bios. Copy and paste free. Instagram and Facebook bio ideas in Bangla and English: 25+ ready bios. Copy and paste free.">
+<meta name="twitter:image" content="https://gameforge-official.netlify.app/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TNFJWK9WPJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TNFJWK9WPJ');
+</script>
+<style>
+        :root { --bg-dark:#0a0e1a; --card-bg:#121829; --border-color:#1e293b; --primary-accent:#3b82f6; --purple-accent:#8b5cf6; --text-main:#e2e8f0; --text-sub:#94a3b8; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { background:var(--bg-dark); color:var(--text-main); font-family:'Hind Siliguri',sans-serif; line-height:1.7; min-height:100vh; display:flex; flex-direction:column; }
+        header { background:rgba(18,24,41,.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--border-color); padding:12px 20px; position:sticky; top:0; z-index:100; }
+        .nav-container { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+        .logo { font-family:'Orbitron',sans-serif; font-size:1.4rem; font-weight:800; background:linear-gradient(135deg,#3b82f6,#8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; text-decoration:none; }
+        .nav-links { display:flex; gap:6px 14px; flex-wrap:wrap; }
+        .nav-links a { color:var(--text-sub); text-decoration:none; font-size:.9rem; }
+        .nav-links a:hover, .nav-links a.on { color:var(--primary-accent); }
+        .container { max-width:900px; margin:30px auto; padding:0 18px; flex:1; width:100%; }
+        .crumbs { font-size:.85rem; color:var(--text-sub); margin-bottom:10px; }
+        .crumbs a { color:var(--text-sub); text-decoration:none; }
+        .hero-title { text-align:center; font-size:2rem; font-weight:700; line-height:1.35; margin-bottom:10px; background:linear-gradient(135deg,#fff,var(--text-sub)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .hero-desc { text-align:center; color:var(--text-sub); margin-bottom:26px; font-size:1.05rem; }
+        .card-box { background:var(--card-bg); border:1px solid var(--border-color); border-radius:16px; padding:22px; box-shadow:0 10px 30px rgba(0,0,0,.45); margin-bottom:18px; }
+        .card-box h2 { font-size:1.2rem; margin-bottom:10px; color:#fff; }
+        .input-box { width:100%; padding:14px 18px; background:#080c14; border:1px solid var(--border-color); border-radius:10px; color:#fff; font-size:1.05rem; outline:none; }
+        .input-box:focus { border-color:var(--primary-accent); box-shadow:0 0 10px rgba(59,130,246,.3); }
+        .gf-hint { color:var(--text-sub); font-size:.9rem; margin:8px 2px 0; }
+        .grid-container { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:10px; margin-top:14px; }
+        .item-card { background:#0d1322; border:1px solid var(--border-color); padding:13px 10px; border-radius:10px; text-align:center; font-size:1.05rem; cursor:pointer; transition:.2s; word-break:break-word; white-space:pre-line; }
+        .item-card:hover { border-color:var(--primary-accent); transform:translateY(-2px); background:#151d33; }
+        .wide-grid { grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); }
+        .cat-title { font-size:1.2rem; font-weight:600; margin:26px 0 2px; color:#fff; }
+        .cat-sub { color:var(--text-sub); font-size:.95rem; margin-bottom:2px; }
+        .seo-box h2 { font-size:1.25rem; margin:22px 0 8px; color:#fff; }
+        .seo-box h2:first-child { margin-top:0; }
+        .seo-box h3 { font-size:1.05rem; margin:14px 0 4px; color:var(--primary-accent); }
+        .seo-box p, .seo-box li { color:var(--text-sub); font-size:1rem; margin-bottom:8px; }
+        .seo-box ul, .seo-box ol { padding-left:22px; }
+        .seo-box a, .related a { color:var(--primary-accent); text-decoration:none; }
+        .seo-box a:hover, .related a:hover { text-decoration:underline; }
+        .related ul { list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:8px 16px; }
+        .related li { color:var(--text-sub); font-size:.92rem; }
+        .toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:var(--purple-accent); color:#fff; padding:10px 25px; border-radius:30px; font-weight:600; display:none; z-index:1000; }
+        footer { background:#060912; border-top:1px solid var(--border-color); text-align:center; padding:20px; color:var(--text-sub); margin-top:40px; font-size:.9rem; }
+        footer a { color:var(--primary-accent); text-decoration:none; margin:0 6px; display:inline-block; }
+        @media (max-width:600px) { .hero-title { font-size:1.55rem; } .grid-container { grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); } .wide-grid { grid-template-columns:1fr; } }
+</style>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
     {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://gameforge-official.netlify.app/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Bio Generator",
-          "item": "https://gameforge-official.netlify.app/bio-generator.html"
-        }
-      ]
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://gameforge-official.netlify.app/"
     },
     {
-      "@type": "WebApplication",
-      "name": "Bio Generator Tool",
-      "url": "https://gameforge-official.netlify.app/bio-generator.html",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "GameForge",
-        "url": "https://gameforge-official.netlify.app/"
-      }
+     "@type": "ListItem",
+     "position": 2,
+     "name": "বায়ো আইডিয়া",
+     "item": "https://gameforge-official.netlify.app/bio-generator.html"
     }
-  ]
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "name": "ইনস্টাগ্রাম ও ফেসবুক বায়ো আইডিয়া ২০২৬ | Instagram Bio Ideas (২৫+ বায়ো)",
+   "url": "https://gameforge-official.netlify.app/bio-generator.html",
+   "inLanguage": "bn",
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "GameForge",
+    "url": "https://gameforge-official.netlify.app/"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "বায়ো কত লম্বা হওয়া উচিত?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Instagram বায়োতে প্রায় ১৫০ অক্ষরের জায়গা থাকে। ছোট ও পরিষ্কার বায়োই সবচেয়ে ভালো কাজ করে।"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "এই বায়োগুলো কি আমি নিজের নামে ব্যবহার করতে পারি?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "হ্যাঁ, ফ্রি। কপি করে নিজের নাম, শহর বা কাজ বসিয়ে নিন। চাইলে নিজের মতো করে বদলে নিন।"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "বায়োতে বাংলা আর ইংরেজি মিশিয়ে লেখা যায় কি?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "হ্যাঁ, যায়। অনেকেই এক লাইনে বাংলা আর অন্য লাইনে ইংরেজি দেন। শুধু দেখতে গোছানো আছে কি না খেয়াল রাখুন।"
+     }
+    }
+   ]
+  }
+ ]
 }
 </script>
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">GAMEFORGE</a>
-            <div class="nav-links">
-                <a href="index.html">🏠 Home</a>
-                <a href="vip-name-generator.html">👑 VIP Names</a>
-                <a href="symbol-library.html">✨ Symbols</a>
-                <a href="bio-generator.html">📝 Bio Generator</a>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <nav style="font-size:12px;color:var(--sll,#8a8fa3);margin-bottom:10px;"><a href="index.html" style="color:var(--sll,#8a8fa3);text-decoration:none;">Home</a> &rsaquo; <span style="color:#fff;">Bio Generator</span></nav>
-        <h1 class="hero-title">Bio Generator Tool 📝</h1>
-        <p class="hero-desc">ইনস্টাগ্রাম ও ফেসবুকের জন্য স্টাইলিশ বায়ো আইডিয়া। (ক্লিক করে কপি করুন)</p>
-        
-        <div class="card-box">
-            <div class="grid-container">
-            <div class="item-card" onclick="copyText('✦ Welcome to my Profile ✦\n👑 King of my own world 👑\n🎯 Gamer | Creator | Dreamer')">✦ Welcome to my Profile ✦<br>👑 King of my own world 👑</div>
-            <div class="item-card" onclick="copyText('❖ Simple Guy 🖤\n❖ Music Lover 🎧\n❖ Living Life on My Own Terms ⚡')">❖ Simple Guy 🖤<br>❖ Music Lover 🎧</div>
-            <div class="item-card" onclick="copyText('🔥 Official Account 🔥\n🏆 Pro Gamer in Free Fire\n💪 Hard Work > Talent')">🔥 Official Account 🔥<br>🏆 Pro Gamer</div>
-            <div class="item-card" onclick="copyText('👑 Queen of my World 👑\n✨ Cute & Classy\n🚫 Don't Trust Anyone')">👑 Queen of my World 👑<br>✨ Cute & Classy</div>
-        </div>
-        </div>
+<header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">GAMEFORGE</a>
+        <nav class="nav-links" aria-label="Main">
+                <a href="index.html">🏠 হোম</a>
+                <a href="free-fire-stylish-name-bangla.html">🎯 ফ্রি ফায়ার</a>
+                <a href="pubg-bgmi-stylish-name-bangla.html">🔫 PUBG/BGMI</a>
+                <a href="stylish-name-for-girls-bangla.html">💕 মেয়েদের নাম</a>
+                <a href="instagram-bio-symbols-bangla.html">📸 Instagram</a>
+                <a href="vip-name-generator.html">👑 VIP নাম</a>
+                <a href="symbol-library.html">✨ সিম্বল</a>
+                <a href="bio-generator.html" class="on">📝 বায়ো</a>
+        </nav>
     </div>
-
-    <div id="toast" class="toast">অনুলিপি করা হয়েছে! (Copied!)</div>
-
-    <footer>
-        <p>© 2026 GameForge. All Rights Reserved.</p>
-        <p style="margin-top: 8px;">
-            <a href="about.html">About Us</a> | 
-            <a href="privacy-policy.html">Privacy Policy</a> | 
-            <a href="terms.html">Terms</a> | 
-            <a href="contact.html">Contact</a> | 
-            <a href="sitemap.html">Sitemap</a>
-        </p>
-    </footer>
-
-    <script>
-        function copyText(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                const toast = document.getElementById('toast');
-                toast.style.display = 'block';
-                setTimeout(() => { toast.style.display = 'none'; }, 2000);
-            });
-        }
-    </script>
-    
+</header>
+<main class="container">
+<p class="crumbs"><a href="index.html">হোম</a> &rsaquo; বায়ো আইডিয়া</p>
+<h1 class="hero-title">ইনস্টাগ্রাম ও ফেসবুক বায়ো আইডিয়া | Instagram Bio Ideas 📝</h1>
+<p class="hero-desc">বাংলা ও ইংরেজি স্টাইলিশ বায়ো। কার্ডে ট্যাপ করলেই পুরো বায়ো কপি হবে।</p>
+<h2 class="cat-title">🎮 গেমার বায়ো</h2>
+<p class="cat-sub">ফ্রি ফায়ার, PUBG ও গেমিং প্রোফাইলের জন্য</p>
+<div class="card-box">
+<div class="grid-container wide-grid">
+<div class="item-card gf-chip" data-copy="🎮 Gamer by passion&#10;🔥 Free Fire Lover&#10;⚡ Never give up">🎮 Gamer by passion
+🔥 Free Fire Lover
+⚡ Never give up</div>
+<div class="item-card gf-chip" data-copy="『 Pro Player 』&#10;🎯 Headshot Machine&#10;👑 Squad Leader">『 Pro Player 』
+🎯 Headshot Machine
+👑 Squad Leader</div>
+<div class="item-card gf-chip" data-copy="☠ খেলি জেতার জন্য ☠&#10;🔥 ফ্রি ফায়ার ফ্যান&#10;⚡ নো ম্যাক্স লেভেল, নো রেস্ট">☠ খেলি জেতার জন্য ☠
+🔥 ফ্রি ফায়ার ফ্যান
+⚡ নো ম্যাক্স লেভেল, নো রেস্ট</div>
+<div class="item-card gf-chip" data-copy="⚔ Clan: 【ACE】&#10;🥷 BGMI | PUBG&#10;📩 DM for scrims">⚔ Clan: 【ACE】
+🥷 BGMI | PUBG
+📩 DM for scrims</div>
+<div class="item-card gf-chip" data-copy="🕹 Level up every day&#10;🏆 Rank pusher&#10;🎧 Live on weekends">🕹 Level up every day
+🏆 Rank pusher
+🎧 Live on weekends</div>
+</div>
+</div>
+<h2 class="cat-title">😎 অ্যাটিটিউড বায়ো</h2>
+<p class="cat-sub">ছেলেদের স্টাইলিশ ও অ্যাটিটিউড বায়ো, বাংলা ও ইংরেজিতে</p>
+<div class="card-box">
+<div class="grid-container wide-grid">
+<div class="item-card gf-chip" data-copy="👑 King of my own world 👑&#10;🎯 Gamer | Creator | Dreamer">👑 King of my own world 👑
+🎯 Gamer | Creator | Dreamer</div>
+<div class="item-card gf-chip" data-copy="❖ Simple Guy 🖤&#10;❖ Music Lover 🎧&#10;❖ Living Life on My Own Terms ⚡">❖ Simple Guy 🖤
+❖ Music Lover 🎧
+❖ Living Life on My Own Terms ⚡</div>
+<div class="item-card gf-chip" data-copy="💪 Hard Work &gt; Talent&#10;🔥 Silent worker&#10;🚫 No drama">💪 Hard Work &gt; Talent
+🔥 Silent worker
+🚫 No drama</div>
+<div class="item-card gf-chip" data-copy="আমি যেমন, তেমনই ভালো 🖤&#10;নিজের জগতের রাজা 👑&#10;সময় সব বলে দেবে ⏳">আমি যেমন, তেমনই ভালো 🖤
+নিজের জগতের রাজা 👑
+সময় সব বলে দেবে ⏳</div>
+<div class="item-card gf-chip" data-copy="চুপচাপ থাকি, কাজ দিয়ে কথা বলি ⚡&#10;নিজেকে নিয়েই ব্যস্ত 🎯">চুপচাপ থাকি, কাজ দিয়ে কথা বলি ⚡
+নিজেকে নিয়েই ব্যস্ত 🎯</div>
+</div>
+</div>
+<h2 class="cat-title">🌸 মেয়েদের বায়ো</h2>
+<p class="cat-sub">কিউট ও এসথেটিক বায়ো আইডিয়া</p>
+<div class="card-box">
+<div class="grid-container wide-grid">
+<div class="item-card gf-chip" data-copy="👑 Queen of my World 👑&#10;✨ Cute &amp; Classy&#10;🚫 Don&#x27;t Trust Anyone">👑 Queen of my World 👑
+✨ Cute &amp; Classy
+🚫 Don&#x27;t Trust Anyone</div>
+<div class="item-card gf-chip" data-copy="🌸 Soft heart, strong mind&#10;☁ Dreamer&#10;📍 Bangladesh">🌸 Soft heart, strong mind
+☁ Dreamer
+📍 Bangladesh</div>
+<div class="item-card gf-chip" data-copy="✿ নরম মনের মেয়ে ✿&#10;☕ চা আর বই&#10;🌙 রাতের আকাশ প্রিয়">✿ নরম মনের মেয়ে ✿
+☕ চা আর বই
+🌙 রাতের আকাশ প্রিয়</div>
+<div class="item-card gf-chip" data-copy="♡ Be kind, be you ♡&#10;🦋 Positive vibes only&#10;✨ Creating my story">♡ Be kind, be you ♡
+🦋 Positive vibes only
+✨ Creating my story</div>
+<div class="item-card gf-chip" data-copy="নিজের গল্পের নায়িকা 🌷&#10;হাসিই আমার শক্তি ✨&#10;ভালো থাকো, ভালো রাখো 🤍">নিজের গল্পের নায়িকা 🌷
+হাসিই আমার শক্তি ✨
+ভালো থাকো, ভালো রাখো 🤍</div>
+</div>
+</div>
+<h2 class="cat-title">✍ ছোট ক্যাপশন বায়ো</h2>
+<p class="cat-sub">এক লাইনের ছোট ও সহজ বায়ো</p>
+<div class="card-box">
+<div class="grid-container wide-grid">
+<div class="item-card gf-chip">Be yourself ✨</div>
+<div class="item-card gf-chip">Simple but special 🖤</div>
+<div class="item-card gf-chip">Born to shine ⭐</div>
+<div class="item-card gf-chip">Just me 🌙</div>
+<div class="item-card gf-chip">Stay humble ⚡</div>
+<div class="item-card gf-chip">নিজের মতো থাকি 🖤</div>
+<div class="item-card gf-chip">শান্ত আমি, ঝড়ও আমি 🌪</div>
+<div class="item-card gf-chip">স্বপ্ন দেখি, কাজ করি 🎯</div>
+<div class="item-card gf-chip">ভালো থাকো সবসময় 🌸</div>
+<div class="item-card gf-chip">আমি আমার গল্পের নায়ক 👑</div>
+</div>
+</div>
+<h2 class="cat-title">💼 কনটেন্ট ক্রিয়েটর ও ব্যবসার বায়ো</h2>
+<p class="cat-sub">ফেসবুক পেজ, ইউটিউবার বা অনলাইন শপের জন্য</p>
+<div class="card-box">
+<div class="grid-container wide-grid">
+<div class="item-card gf-chip" data-copy="📸 Photographer | Dhaka&#10;🎬 Reels &amp; Stories&#10;📩 DM for work">📸 Photographer | Dhaka
+🎬 Reels &amp; Stories
+📩 DM for work</div>
+<div class="item-card gf-chip" data-copy="🎨 Graphic Designer&#10;✨ Logo • Banner • Thumbnail&#10;📩 Order via DM">🎨 Graphic Designer
+✨ Logo • Banner • Thumbnail
+📩 Order via DM</div>
+<div class="item-card gf-chip" data-copy="🎥 YouTuber | Gaming&#10;🔔 New video every week&#10;👇 Subscribe now">🎥 YouTuber | Gaming
+🔔 New video every week
+👇 Subscribe now</div>
+<div class="item-card gf-chip" data-copy="🛍 Online Shop&#10;🚚 Delivery all over Bangladesh&#10;📞 Message us to order">🛍 Online Shop
+🚚 Delivery all over Bangladesh
+📞 Message us to order</div>
+</div>
+</div>
+<section class="seo-box card-box">
+<h2>ভালো একটা বায়ো কীভাবে লিখবেন?</h2>
+<p>বায়ো হলো আপনার প্রোফাইলের প্রথম পরিচয়। মানুষ প্রোফাইলে ঢুকে প্রথম কয়েক সেকেন্ডে বায়ো পড়েই ঠিক করে ফলো করবে কি না। তাই ছোট, পরিষ্কার আর নিজের মতো করে লেখাই সবচেয়ে ভালো।</p>
+<h2>বায়ো লেখার সহজ নিয়ম</h2>
+<ol><li>প্রথম লাইনে নিজের পরিচয় বা সবচেয়ে গুরুত্বপূর্ণ কথা লিখুন।</li><li>দ্বিতীয় লাইনে শখ, কাজ বা আপনি কী নিয়ে পোস্ট করেন তা বলুন।</li><li>শেষ লাইনে যোগাযোগের উপায় বা কী করতে চান তা দিন (যেমন DM for work)।</li><li>দুই-তিনটা সিম্বল বা ইমোজি দিন। বেশি দিলে পড়তে কষ্ট হয়।</li></ol>
+<h2>বায়ো কপি-পেস্ট কীভাবে করবেন?</h2>
+<p>যেকোনো বায়োর কার্ডে ট্যাপ করলেই পুরো বায়ো (সব লাইনসহ) কপি হয়ে যাবে। তারপর Instagram, Facebook বা TikTok-এর প্রোফাইল এডিটে গিয়ে পেস্ট করুন এবং নিজের নাম, শহর বা কাজ বদলে নিন। বায়োর জন্য সিম্বল দরকার হলে <a href="symbol-library.html">সিম্বল কালেকশন</a> আর <a href="instagram-bio-symbols-bangla.html">Instagram Bio Symbols</a> দেখুন।</p>
+</section>
+<section class="seo-box card-box"><h2>বায়ো কেন এত গুরুত্বপূর্ণ?</h2>
+<p>নতুন কেউ তোমার প্রোফাইল দেখলে প্রথম কয়েক সেকেন্ডে ছবি, নাম আর বায়ো দেখে সিদ্ধান্ত নেয় ফলো করবে কি না। বায়ো তাই একটা ছোট বিজ্ঞাপনের মতো, যেখানে নিজের পরিচয় ও স্বভাব ফুটে ওঠে। অতিরিক্ত বানানো বা কপি করা বায়ো চট করে ধরা পড়ে, তাই রেডি লাইন নিয়ে নিজের মতো করে একটু বদলে নেওয়া ভালো।</p>
+<h2>বায়োর ধরন অনুযায়ী আলাদা পেজ</h2>
+<ul>
+<li><a href="attitude-bio-bangla.html">অ্যাটিটিউড বায়ো</a> — আত্মবিশ্বাসী ও কুল স্টাইল।</li>
+<li><a href="girls-bio-bangla.html">মেয়েদের বায়ো</a> — কিউট ও এসথেটিক।</li>
+<li><a href="short-bio-bangla.html">ছোট বায়ো</a> — ২-৫ শব্দে মিনিমাল।</li>
+<li><a href="romantic-couple-bio-bangla.html">রোমান্টিক কাপল বায়ো</a> — ভালোবাসার মানুষের জন্য।</li>
+<li><a href="islamic-bio-bangla.html">ইসলামিক বায়ো</a> — শুকরিয়া, সবর ও বিশ্বাস নিয়ে।</li>
+<li><a href="sad-bio-bangla.html">স্যাড বায়ো</a> — মন খারাপের দিনের জন্য।</li>
+<li><a href="free-fire-bio-bangla.html">ফ্রি ফায়ার বায়ো</a> — গেমারদের সিগনেচার।</li>
+<li><a href="whatsapp-stylish-name-status-bangla.html">হোয়াটসঅ্যাপ স্ট্যাটাস</a> — ছোট অবস্থা-জানানো লাইন।</li>
+</ul>
+<h2>নিজের বায়ো নিজে লেখার ফর্মুলা</h2>
+<ol>
+<li><strong>আমি কে:</strong> পেশা, শখ বা পরিচয় (ছাত্র, গেমার, ফটোগ্রাফার)।</li>
+<li><strong>আমি কেমন:</strong> স্বভাব বা মনোভাবের এক লাইন।</li>
+<li><strong>কেন ফলো করবে:</strong> কী ধরনের কনটেন্ট পাবে।</li>
+<li><strong>সাজসজ্জা:</strong> দুই-তিনটা সিম্বল বা ইমোজি।</li>
+</ol>
+<h2>ফেসবুক ও ইনস্টাগ্রামের পার্থক্য</h2>
+<p>ফেসবুকে বায়ো (ইন্ট্রো) তুলনামূলক ছোট ও তথ্যভিত্তিক হয়: কোথায় থাকো, কোথায় পড়ো বা কাজ করো। ইনস্টাগ্রামে বায়ো বেশি স্টাইলিশ ও ব্যক্তিত্বপূর্ণ, কারণ ওখানে প্রোফাইল দেখেই ফলো করার সিদ্ধান্ত হয়। দুই জায়গার জন্য আলাদা বায়ো রাখলে ভালো, তবে সাধারণ লাইন দুই জায়গাতেই চলে।</p>
+<h2>সিম্বলের সাহায্য নাও</h2>
+<p>বায়ো সাজাতে <a href="instagram-bio-symbols-bangla.html">Instagram Bio Symbols</a> ও <a href="symbol-library.html">সিম্বল লাইব্রেরি</a> ব্যবহার করো। ইংরেজি অংশে ফন্ট বদলাতে <a href="fancy-text-generator-bangla.html">ফ্যান্সি টেক্সট জেনারেটর</a> আছে।</p><h2>বায়ো নিয়ে সাধারণ প্রশ্ন ও ভুল ধারণা</h2>
+<p>অনেকে ভাবে বায়ো যত বড় হবে ততই ভালো। আসলে উল্টোটা সত্যি: ছোট ও স্পষ্ট বায়ো সবচেয়ে বেশি পড়া হয়। আরেকটা ভুল ধারণা হলো কপি-পেস্ট বায়ো দিলে প্রোফাইল ভালো দেখায়। অন্যের লেখা লাইন ব্যবহার করতে কোনো দোষ নেই, কিন্তু তোমার নিজের স্বভাবের সঙ্গে না মিললে সেটা বানোয়াট লাগে। তাই রেডি লাইন থেকে বেছে নিয়ে এক-দুটো শব্দ নিজের মতো বদলে নাও।</p></section>
+<section class="seo-box card-box">
+<h2>সাধারণ প্রশ্ন (FAQ)</h2>
+<h3>বায়ো কত লম্বা হওয়া উচিত?</h3>
+<p>Instagram বায়োতে প্রায় ১৫০ অক্ষরের জায়গা থাকে। ছোট ও পরিষ্কার বায়োই সবচেয়ে ভালো কাজ করে।</p>
+<h3>এই বায়োগুলো কি আমি নিজের নামে ব্যবহার করতে পারি?</h3>
+<p>হ্যাঁ, ফ্রি। কপি করে নিজের নাম, শহর বা কাজ বসিয়ে নিন। চাইলে নিজের মতো করে বদলে নিন।</p>
+<h3>বায়োতে বাংলা আর ইংরেজি মিশিয়ে লেখা যায় কি?</h3>
+<p>হ্যাঁ, যায়। অনেকেই এক লাইনে বাংলা আর অন্য লাইনে ইংরেজি দেন। শুধু দেখতে গোছানো আছে কি না খেয়াল রাখুন।</p>
+</section>
+<section class="related card-box">
+<h2>আরও গাইড ও আইডিয়া</h2>
+<ul>
+<li><a href="free-fire-name-list.html">ফ্রি ফায়ার নেম লিস্ট (১০০০+ নাম)</a></li>
+<li><a href="attitude-bio-bangla.html">অ্যাটিটিউড বায়ো</a></li>
+<li><a href="girls-bio-bangla.html">মেয়েদের বায়ো</a></li>
+<li><a href="islamic-bio-bangla.html">ইসলামিক বায়ো</a></li>
+<li><a href="romantic-couple-bio-bangla.html">রোমান্টিক কাপল বায়ো</a></li>
+<li><a href="short-bio-bangla.html">ছোট বায়ো</a></li>
+<li><a href="sad-bio-bangla.html">স্যাড বায়ো</a></li>
+<li><a href="free-fire-bio-bangla.html">ফ্রি ফায়ার বায়ো</a></li>
+<li><a href="whatsapp-stylish-name-status-bangla.html">হোয়াটসঅ্যাপ স্ট্যাটাস ও নাম</a></li>
+</ul>
+</section>
+<section class="related card-box">
+<h2>আরও দেখুন</h2>
+<ul>
+<li><a href="free-fire-stylish-name-bangla.html">ফ্রি ফায়ার স্টাইলিশ নাম</a> — ফ্রি ফায়ারের জন্য কপি-পেস্ট নাম</li>
+<li><a href="pubg-bgmi-stylish-name-bangla.html">PUBG / BGMI স্টাইলিশ নাম</a> — ক্ল্যান ট্যাগ ও প্রো নাম আইডিয়া</li>
+<li><a href="stylish-name-for-girls-bangla.html">মেয়েদের স্টাইলিশ নাম</a> — কিউট ও এসথেটিক নাম</li>
+<li><a href="instagram-bio-symbols-bangla.html">Instagram Bio Symbols</a> — বায়ো ডেকোরেশনের সিম্বল ও টেমপ্লেট</li>
+<li><a href="vip-name-generator.html">VIP নেম জেনারেটর</a> — নাম লিখলেই ভিআইপি স্টাইল তৈরি</li>
+<li><a href="symbol-library.html">কুল সিম্বল কপি পেস্ট</a> — গেমিং ও সোশ্যাল মিডিয়ার সিম্বল</li>
+<li><a href="index.html">স্টাইলিশ নিকনেম জেনারেটর</a> — ফ্যান্সি ফন্ট ও সিম্বল</li>
+</ul>
+</section>
+</main>
+<div id="toast" class="toast"></div>
+<footer>
+    <p>© 2026 GameForge. All Rights Reserved. GameForge একটি স্বাধীন টুল; Garena, Krafton বা Instagram-এর সাথে যুক্ত নয়।</p>
+    <p style="margin-top:8px;">
+        <a href="about.html">About Us</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="contact.html">Contact</a>
+        <a href="sitemap.html">Sitemap</a>
+    </p>
+</footer>
+<script src="/gf-gen.js" defer></script>
 </body>
 </html>

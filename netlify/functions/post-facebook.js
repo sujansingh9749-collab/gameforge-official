@@ -52,50 +52,84 @@ const nicknames = [
     "👑 𝔏𝔢𝔤𝔢𝔫𝔡𝔞𝔯𝔶 𝔛 👑"
 ];
 
-exports.handler = async (event, context) => {
+const SITE = 'https://gameforge-official.netlify.app';
+
+// প্রতিদিন একটি করে পেজ প্রোমোট হবে; ফেসবুক লিংক কার্ডে og-image দেখাবে
+const PAGES = [
+    { path: '/free-fire-name-list.html', hook: '📋 ১০০০+ ফ্রি ফায়ার স্টাইলিশ নামের লিস্ট' },
+    { path: '/free-fire-stylish-name-bangla.html', hook: '🎯 ফ্রি ফায়ারের জন্য স্টাইলিশ নাম খুঁজছ?' },
+    { path: '/pubg-bgmi-stylish-name-bangla.html', hook: '🔫 PUBG / BGMI-র জন্য প্রো নাম ও ক্ল্যান ট্যাগ' },
+    { path: '/stylish-name-for-girls-bangla.html', hook: '💕 কিউট ও এসথেটিক নাম খুঁজছ?' },
+    { path: '/instagram-bio-symbols-bangla.html', hook: '📸 Instagram বায়োর জন্য এসথেটিক সিম্বল' },
+    { path: '/symbol-library.html', hook: '✨ কুল সিম্বল, এক ট্যাপে কপি-পেস্ট' },
+    { path: '/bio-generator.html', hook: '📝 স্টাইলিশ বাংলা ও ইংরেজি বায়ো আইডিয়া' },
+    { path: '/vip-name-generator.html', hook: '👑 নাম লিখলেই VIP স্টাইল রেডি' },
+    { path: '/', hook: '🔥 ৫০০+ স্টাইলিশ নিকনেম জেনারেটর' }
+];
+
+const reply = (statusCode, body) => ({
+    statusCode,
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify(body)
+});
+
+exports.handler = async (event) => {
     try {
+        const qs = (event && event.queryStringParameters) || {};
+
+        const day = Math.floor(Date.now() / 86400000);
+        const nickname = nicknames[day % nicknames.length];
+        const page = PAGES[day % PAGES.length];
+        const link = SITE + page.path;
+
+        const message =
+            `${page.hook}\n\n` +
+            `📌 আজকের স্পেশাল নাম:\n${nickname}\n\n` +
+            `👇 নিজের নাম দিয়ে ফ্রিতে বানাও (ট্যাপ করলেই কপি):\n${link}\n\n` +
+            `#ফ্রিফায়ার #স্টাইলিশনাম #PUBG #BGMI #FreeFireName #GameForge`;
+
+        // টেস্ট: .../post-facebook?dry=1 — কিছু পোস্ট না করে প্রিভিউ দেখায়
+        if (qs.dry === '1') {
+            return reply(200, { dry: true, link, message });
+        }
+
+        // ঐচ্ছিক সুরক্ষা: Netlify-তে CRON_SECRET দিলে URL-এ ?key=... লাগবে
+        const secret = process.env.CRON_SECRET;
+        if (secret && qs.key !== secret) {
+            return reply(401, { ok: false, error: 'Unauthorized' });
+        }
+
         const PAGE_ID = process.env.FACEBOOK_PAGE_ID;
         const ACCESS_TOKEN = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
-
-        if (!PAGE_ID || !ACCESS_TOKEN) {
-            console.error("Facebook credentials are not configured.");
-            return { statusCode: 500, body: "Credentials missing" };
+        const missing = [];
+        if (!PAGE_ID) missing.push('FACEBOOK_PAGE_ID');
+        if (!ACCESS_TOKEN) missing.push('FACEBOOK_PAGE_ACCESS_TOKEN');
+        if (missing.length) {
+            console.error('Missing environment variables:', missing.join(', '));
+            return reply(500, { ok: false, error: 'Missing environment variables', missing });
         }
 
-        // তারিখ অনুযায়ী সিরিয়াল মেইনটেইন করার লজিক
-        const daysSinceEpoch = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
-        const index = daysSinceEpoch % nicknames.length;
-        const selectedNickname = nicknames[index];
-
-        const postMessage = `🔥 Make your Free Fire, PUBG or any gaming profile more attractive with today's best stylish nickname! 🎮✨\n\n📌 Today's Special Name:\n${selectedNickname}\n\n👇 Visit our website to generate your favorite name for free:\n🌐 https://gameforge-official.netlify.app\n\n#GameForge #StylishName #FreeFireName #PubgName #GamingCommunity #StylishNickname`;
-
-        const responseUrl = `https://graph.facebook.com/v18.0/${PAGE_ID}/feed`;
-        const fbResponse = await fetch(responseUrl, {
+        const version = process.env.FACEBOOK_API_VERSION || 'v23.0';
+        const fbResponse = await fetch(`https://graph.facebook.com/${version}/${PAGE_ID}/feed`, {
             method: 'POST',
-            body: JSON.stringify({
-                message: postMessage,
-                access_token: ACCESS_TOKEN
-            }),
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message, link, access_token: ACCESS_TOKEN })
         });
+        const result = await fbResponse.json().catch(() => ({}));
 
-        const result = await fbResponse.json();
-
-        if (result.error) {
-            console.error("Facebook API Error:", result.error);
-            return { statusCode: 500, body: JSON.stringify(result.error) };
+        if (!fbResponse.ok || result.error) {
+            console.error('Facebook API Error:', JSON.stringify(result.error || { status: fbResponse.status }));
+            return reply(502, { ok: false, facebook_error: result.error || { status: fbResponse.status } });
         }
 
-        console.log("Successfully posted to Facebook:", result);
-        return { statusCode: 200, body: JSON.stringify({ success: true, postId: result.id }) };
-
+        console.log('Posted to Facebook:', result.id);
+        return reply(200, { ok: true, postId: result.id, link });
     } catch (error) {
-        console.error("Error:", error.message);
-        return { statusCode: 500, body: error.message };
+        console.error('Error:', error.message);
+        return reply(500, { ok: false, error: error.message });
     }
 };
 
-// প্রতিদিন সকাল ১০টায় শিডিউল করার কনফিগারেশন
-exports.config = {
-    schedule: "0 10 * * *"
-};
+// শিডিউল: এখানে নয়, cron-job.org থেকে প্রতিদিন একবার
+// https://gameforge-official.netlify.app/.netlify/functions/post-facebook?key=YOUR_SECRET
+// কল করো (Netlify-তে CRON_SECRET সেট করলে)।
