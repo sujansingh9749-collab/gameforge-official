@@ -112,6 +112,8 @@ h1 span{background:linear-gradient(135deg,var(--pul),var(--cy));-webkit-backgrou
 .ft:hover{border-color:var(--pul);color:var(--wh)}
 .ft.on{background:var(--pu);border-color:var(--pu);color:#fff;box-shadow:0 0 10px rgba(123,47,255,.4)}
 
+.dcats{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 12px}.dc{cursor:pointer;border:1px solid var(--glb);border-radius:40px;padding:3px 10px;font-size:11px;font-weight:500;color:var(--sll);background:transparent;transition:all .14s;user-select:none}.dc:hover{border-color:var(--pul);color:var(--wh)}.dc.on{background:var(--pu);border-color:var(--pu);color:#fff;box-shadow:0 0 10px rgba(123,47,255,.4)}.dnote{font-size:12px;color:var(--sll);margin:0 0 12px}.dnote strong{color:var(--wh)}.dcb{cursor:pointer;border:1.5px solid var(--cy);background:rgba(0,229,255,.1);color:var(--cy);border-radius:22px;font-size:14px;font-weight:700;padding:8px 18px;margin-left:auto;box-shadow:0 0 16px rgba(0,229,255,.3);transition:all .15s}.dcb:hover,.dcb:active{background:var(--cy);color:#04141c;box-shadow:0 0 22px rgba(0,229,255,.6)}.sechd{flex-wrap:wrap;gap:8px 10px}
+.dsh{flex-wrap:wrap;gap:6px 10px;margin-bottom:14px}.sechd .dh{flex:1 1 100%;font-size:clamp(14px,4.3vw,22px);letter-spacing:1.5px;color:var(--cy);text-shadow:0 0 16px rgba(0,229,255,.5);line-height:1.3}
 /* SECTION HD */
 .sechd{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .sechd h3{font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cy)}
@@ -119,7 +121,7 @@ h1 span{background:linear-gradient(135deg,var(--pul),var(--cy));-webkit-backgrou
 
 /* NAME GRID */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:9px;margin-bottom:24px}
-.nc{background:var(--gl);border:1px solid var(--glb);border-radius:12px;padding:14px 16px;transition:all .16s;animation:fu .28s ease both;position:relative;overflow:hidden}
+.nc{content-visibility:auto;contain-intrinsic-size:auto 118px;background:var(--gl);border:1px solid var(--glb);border-radius:12px;padding:14px 16px;transition:all .16s;animation:fu .28s ease both;position:relative;overflow:hidden}
 @keyframes fu{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
 .nc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--pu),var(--cy));opacity:0;transition:opacity .18s;border-radius:3px 0 0 3px}
 .nc:hover{border-color:rgba(123,47,255,.45);background:rgba(123,47,255,.08);transform:translateY(-2px)}
@@ -207,76 +209,76 @@ h1 span{background:linear-gradient(135deg,var(--pul),var(--cy));-webkit-backgrou
 
 <div class="sb-sec">
 <div class="sb-hd">📌 Quick</div>
-<button class="sbb on" onclick="SC('all',this)"><span class="ic">✦</span>All Styles</button>
-<button class="sbb" onclick="SC('new',this)"><span class="ic">🆕</span>New / Trending</button>
-<button class="sbb" onclick="SC('favorites',this)"><span class="ic">❤️</span>My Favorites</button>
-<button class="sbb" onclick="SC('random',this)"><span class="ic">🎲</span>Random Mix</button>
+<button class="sbb on" onclick="SCAT('all',this)"><span class="ic">✦</span>All Styles</button>
+<button class="sbb" onclick="SCAT('new',this)"><span class="ic">🆕</span>New / Trending</button>
+<button class="sbb" onclick="SCAT('favorites',this)"><span class="ic">❤️</span>My Favorites</button>
+<button class="sbb" onclick="SCAT('random',this)"><span class="ic">🎲</span>Random Mix</button>
 </div>
 
 <div class="sb-sec">
 <div class="sb-hd">🔤 Unicode Fonts</div>
-<button class="sbb" onclick="SC('bold',this)"><span class="ic">𝐁</span>Bold</button>
-<button class="sbb" onclick="SC('italic',this)"><span class="ic">𝐼</span>Italic</button>
-<button class="sbb" onclick="SC('bolditalic',this)"><span class="ic">𝑩</span>Bold Italic</button>
-<button class="sbb" onclick="SC('fancy',this)"><span class="ic">𝒻</span>Fancy / Calligraphy</button>
-<button class="sbb" onclick="SC('script',this)"><span class="ic">𝓈</span>Bold Script</button>
-<button class="sbb" onclick="SC('fraktur',this)"><span class="ic">𝔉</span>Fraktur / Gothic</button>
-<button class="sbb" onclick="SC('boldfrak',this)"><span class="ic">𝕱</span>Bold Fraktur</button>
-<button class="sbb" onclick="SC('double',this)"><span class="ic">𝔻</span>Double Struck</button>
-<button class="sbb" onclick="SC('mono',this)"><span class="ic">𝙼</span>Monospace</button>
-<button class="sbb" onclick="SC('sans',this)"><span class="ic">𝖲</span>Sans-Serif</button>
-<button class="sbb" onclick="SC('sansbold',this)"><span class="ic">𝗦</span>Sans Bold</button>
-<button class="sbb" onclick="SC('sansbi',this)"><span class="ic">𝙎</span>Sans Bold Italic</button>
-<button class="sbb" onclick="SC('sansitalic',this)"><span class="ic">𝘚</span>Sans Italic</button>
+<button class="sbb" onclick="SCAT('bold',this)"><span class="ic">𝐁</span>Bold</button>
+<button class="sbb" onclick="SCAT('italic',this)"><span class="ic">𝐼</span>Italic</button>
+<button class="sbb" onclick="SCAT('bolditalic',this)"><span class="ic">𝑩</span>Bold Italic</button>
+<button class="sbb" onclick="SCAT('fancy',this)"><span class="ic">𝒻</span>Fancy / Calligraphy</button>
+<button class="sbb" onclick="SCAT('script',this)"><span class="ic">𝓈</span>Bold Script</button>
+<button class="sbb" onclick="SCAT('fraktur',this)"><span class="ic">𝔉</span>Fraktur / Gothic</button>
+<button class="sbb" onclick="SCAT('boldfrak',this)"><span class="ic">𝕱</span>Bold Fraktur</button>
+<button class="sbb" onclick="SCAT('double',this)"><span class="ic">𝔻</span>Double Struck</button>
+<button class="sbb" onclick="SCAT('mono',this)"><span class="ic">𝙼</span>Monospace</button>
+<button class="sbb" onclick="SCAT('sans',this)"><span class="ic">𝖲</span>Sans-Serif</button>
+<button class="sbb" onclick="SCAT('sansbold',this)"><span class="ic">𝗦</span>Sans Bold</button>
+<button class="sbb" onclick="SCAT('sansbi',this)"><span class="ic">𝙎</span>Sans Bold Italic</button>
+<button class="sbb" onclick="SCAT('sansitalic',this)"><span class="ic">𝘚</span>Sans Italic</button>
 </div>
 
 <div class="sb-sec">
 <div class="sb-hd">🎨 Text Effects</div>
-<button class="sbb" onclick="SC('bubble',this)"><span class="ic">ⓑ</span>Bubble / Circle</button>
-<button class="sbb" onclick="SC('squarebox',this)"><span class="ic">🅂</span>Square Box</button>
-<button class="sbb" onclick="SC('small',this)"><span class="ic">ꜱ</span>Small Caps</button>
-<button class="sbb" onclick="SC('wide',this)"><span class="ic">Ｗ</span>Wide / Fullwidth</button>
-<button class="sbb" onclick="SC('flip',this)"><span class="ic">ɐ</span>Flip / Upside Down</button>
-<button class="sbb" onclick="SC('mirror',this)"><span class="ic">ᴙ</span>Mirror Text</button>
-<button class="sbb" onclick="SC('super',this)"><span class="ic">ˢ</span>Superscript</button>
-<button class="sbb" onclick="SC('sub',this)"><span class="ic">ₐ</span>Subscript</button>
-<button class="sbb" onclick="SC('glitch',this)"><span class="ic">▓</span>Glitch / Zalgo</button>
-<button class="sbb" onclick="SC('underline',this)"><span class="ic">U̲</span>Underline</button>
-<button class="sbb" onclick="SC('strike',this)"><span class="ic">S̶</span>Strikethrough</button>
-<button class="sbb" onclick="SC('mixed',this)"><span class="ic">S¥</span>Mixed / Symbolic</button>
-<button class="sbb" onclick="SC('joiner',this)"><span class="ic">J·i</span>Joiner / Spaced</button>
-<button class="sbb" onclick="SC('asian',this)"><span class="ic">卂</span>Asian / CJK Style</button>
-<button class="sbb" onclick="SC('weird',this)"><span class="ic">W̷</span>Weird / Combo</button>
-<button class="sbb" onclick="SC('cute',this)"><span class="ic">❤</span>Cute Style</button>
+<button class="sbb" onclick="SCAT('bubble',this)"><span class="ic">ⓑ</span>Bubble / Circle</button>
+<button class="sbb" onclick="SCAT('squarebox',this)"><span class="ic">🅂</span>Square Box</button>
+<button class="sbb" onclick="SCAT('small',this)"><span class="ic">ꜱ</span>Small Caps</button>
+<button class="sbb" onclick="SCAT('wide',this)"><span class="ic">Ｗ</span>Wide / Fullwidth</button>
+<button class="sbb" onclick="SCAT('flip',this)"><span class="ic">ɐ</span>Flip / Upside Down</button>
+<button class="sbb" onclick="SCAT('mirror',this)"><span class="ic">ᴙ</span>Mirror Text</button>
+<button class="sbb" onclick="SCAT('super',this)"><span class="ic">ˢ</span>Superscript</button>
+<button class="sbb" onclick="SCAT('sub',this)"><span class="ic">ₐ</span>Subscript</button>
+<button class="sbb" onclick="SCAT('glitch',this)"><span class="ic">▓</span>Glitch / Zalgo</button>
+<button class="sbb" onclick="SCAT('underline',this)"><span class="ic">U̲</span>Underline</button>
+<button class="sbb" onclick="SCAT('strike',this)"><span class="ic">S̶</span>Strikethrough</button>
+<button class="sbb" onclick="SCAT('mixed',this)"><span class="ic">S¥</span>Mixed / Symbolic</button>
+<button class="sbb" onclick="SCAT('joiner',this)"><span class="ic">J·i</span>Joiner / Spaced</button>
+<button class="sbb" onclick="SCAT('asian',this)"><span class="ic">卂</span>Asian / CJK Style</button>
+<button class="sbb" onclick="SCAT('weird',this)"><span class="ic">W̷</span>Weird / Combo</button>
+<button class="sbb" onclick="SCAT('cute',this)"><span class="ic">❤</span>Cute Style</button>
 </div>
 
 <div class="sb-sec">
 <div class="sb-hd">꧁ Symbol Frames</div>
-<button class="sbb" onclick="SC('symbols',this)"><span class="ic">꧁</span>All Symbol Frames</button>
-<button class="sbb" onclick="SC('crown',this)"><span class="ic">👑</span>Crown</button>
-<button class="sbb" onclick="SC('fire',this)"><span class="ic">🔥</span>Fire</button>
-<button class="sbb" onclick="SC('star',this)"><span class="ic">★</span>Stars</button>
-<button class="sbb" onclick="SC('heart',this)"><span class="ic">❤</span>Hearts</button>
-<button class="sbb" onclick="SC('flower',this)"><span class="ic">✿</span>Flowers / Kawaii</button>
-<button class="sbb" onclick="SC('arrow',this)"><span class="ic">➤</span>Arrows</button>
-<button class="sbb" onclick="SC('bracket',this)"><span class="ic">【】</span>Brackets</button>
-<button class="sbb" onclick="SC('japanese',this)"><span class="ic">彡</span>Japanese</button>
-<button class="sbb" onclick="SC('military',this)"><span class="ic">⚔</span>Military / War</button>
-<button class="sbb" onclick="SC('skull',this)"><span class="ic">☠</span>Skull / Dark</button>
-<button class="sbb" onclick="SC('nature',this)"><span class="ic">🌙</span>Nature / Moon</button>
-<button class="sbb" onclick="SC('sparkle',this)"><span class="ic">✨</span>Sparkle / Magic</button>
-<button class="sbb" onclick="SC('gaming',this)"><span class="ic">🎮</span>Gaming Icons</button>
-<button class="sbb" onclick="SC('aesthetic',this)"><span class="ic">｡</span>Aesthetic / Soft</button>
-<button class="sbb" onclick="SC('vip',this)"><span class="ic">💎</span>VIP / Elite / Pro</button>
-<button class="sbb" onclick="SC('border',this)"><span class="ic">░</span>Border / Block</button>
-<button class="sbb" onclick="SC('animal',this)"><span class="ic">🐺</span>Animals</button>
-<button class="sbb" onclick="SC('devil',this)"><span class="ic">😈</span>Devil / Evil</button>
-<button class="sbb" onclick="SC('angel',this)"><span class="ic">😇</span>Angel / Holy</button>
-<button class="sbb" onclick="SC('ninja',this)"><span class="ic">🥷</span>Ninja / Shadow</button>
-<button class="sbb" onclick="SC('dragon',this)"><span class="ic">🐉</span>Dragon / Beast</button>
-<button class="sbb" onclick="SC('music',this)"><span class="ic">🎵</span>Music</button>
-<button class="sbb" onclick="SC('space',this)"><span class="ic">🚀</span>Space / Galaxy</button>
-<button class="sbb" onclick="SC('legend',this)"><span class="ic">⚡</span>Legend / Rank</button>
+<button class="sbb" onclick="SCAT('symbols',this)"><span class="ic">꧁</span>All Symbol Frames</button>
+<button class="sbb" onclick="SCAT('crown',this)"><span class="ic">👑</span>Crown</button>
+<button class="sbb" onclick="SCAT('fire',this)"><span class="ic">🔥</span>Fire</button>
+<button class="sbb" onclick="SCAT('star',this)"><span class="ic">★</span>Stars</button>
+<button class="sbb" onclick="SCAT('heart',this)"><span class="ic">❤</span>Hearts</button>
+<button class="sbb" onclick="SCAT('flower',this)"><span class="ic">✿</span>Flowers / Kawaii</button>
+<button class="sbb" onclick="SCAT('arrow',this)"><span class="ic">➤</span>Arrows</button>
+<button class="sbb" onclick="SCAT('bracket',this)"><span class="ic">【】</span>Brackets</button>
+<button class="sbb" onclick="SCAT('japanese',this)"><span class="ic">彡</span>Japanese</button>
+<button class="sbb" onclick="SCAT('military',this)"><span class="ic">⚔</span>Military / War</button>
+<button class="sbb" onclick="SCAT('skull',this)"><span class="ic">☠</span>Skull / Dark</button>
+<button class="sbb" onclick="SCAT('nature',this)"><span class="ic">🌙</span>Nature / Moon</button>
+<button class="sbb" onclick="SCAT('sparkle',this)"><span class="ic">✨</span>Sparkle / Magic</button>
+<button class="sbb" onclick="SCAT('gaming',this)"><span class="ic">🎮</span>Gaming Icons</button>
+<button class="sbb" onclick="SCAT('aesthetic',this)"><span class="ic">｡</span>Aesthetic / Soft</button>
+<button class="sbb" onclick="SCAT('vip',this)"><span class="ic">💎</span>VIP / Elite / Pro</button>
+<button class="sbb" onclick="SCAT('border',this)"><span class="ic">░</span>Border / Block</button>
+<button class="sbb" onclick="SCAT('animal',this)"><span class="ic">🐺</span>Animals</button>
+<button class="sbb" onclick="SCAT('devil',this)"><span class="ic">😈</span>Devil / Evil</button>
+<button class="sbb" onclick="SCAT('angel',this)"><span class="ic">😇</span>Angel / Holy</button>
+<button class="sbb" onclick="SCAT('ninja',this)"><span class="ic">🥷</span>Ninja / Shadow</button>
+<button class="sbb" onclick="SCAT('dragon',this)"><span class="ic">🐉</span>Dragon / Beast</button>
+<button class="sbb" onclick="SCAT('music',this)"><span class="ic">🎵</span>Music</button>
+<button class="sbb" onclick="SCAT('space',this)"><span class="ic">🚀</span>Space / Galaxy</button>
+<button class="sbb" onclick="SCAT('legend',this)"><span class="ic">⚡</span>Legend / Rank</button>
 </div>
 
 <div class="sb-sec">
@@ -502,13 +504,51 @@ h1 span{background:linear-gradient(135deg,var(--pul),var(--cy));-webkit-backgrou
 </main>
 </div>
 <script>
-// ── PARTICLES ──────────────────────────────────────────────
+// ── PARTICLES: bright, dense, and they ripple like water where you touch ──
 const cv=document.getElementById('cvs'),cx=cv.getContext('2d');
-let W,H,pts=[];
-function rz(){W=cv.width=innerWidth;H=cv.height=innerHeight}
-function mp(){pts=[];const n=Math.min(60,Math.floor(W*H/14000));for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+.3,vx:(Math.random()-.5)*.22,vy:(Math.random()-.5)*.22,a:Math.random()*.5+.07,c:Math.random()>.5?'123,47,255':'0,245,255'})}
-function dr(){cx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=`rgba(${p.c},${p.a})`;cx.fill()});requestAnimationFrame(dr)}
-rz();mp();dr();addEventListener('resize',()=>{rz();mp()});
+let W,H,pts=[],DPR=1,RP=[],PT={x:-999,y:-999,on:false},LT=0,LK={x:-999,y:-999};
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function rz(){DPR=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cv.style.width=W+'px';cv.style.height=H+'px';cx.setTransform(DPR,0,0,DPR,0,0)}
+function mp(){pts=[];const n=Math.min(140,Math.floor(W*H/6000));const cols=['160,100,255','0,245,255','200,130,255','90,255,235'];
+  for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+.9,vx:RM?0:(Math.random()-.5)*.3,vy:RM?0:(Math.random()-.5)*.3,a:Math.random()*.45+.45,c:cols[(Math.random()*cols.length)|0],ox:0,oy:0,wx:0,wy:0})}
+function pk(x,y,big){
+  PT.x=x;PT.y=y;PT.on=true;if(RM)return;
+  if(big||Math.hypot(x-LK.x,y-LK.y)>48){LK.x=x;LK.y=y;RP.push({x,y,t:performance.now(),life:big?1700:1100,th:big?90:62,amp:big?.5:.3});if(RP.length>9)RP.shift()}
+}
+function dr(){
+  const now=performance.now(),dt=Math.min(40,(now-LT)||16.7);LT=now;const k=dt/16.7,dm=Math.pow(.93,k);
+  cx.clearRect(0,0,W,H);
+  for(let i=RP.length-1;i>=0;i--)if(now-RP[i].t>RP[i].life)RP.splice(i,1);
+  for(const p of pts){
+    p.x+=p.vx*k;p.y+=p.vy*k;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    let fx=0,fy=0;const px=p.x+p.ox,py=p.y+p.oy;
+    for(const r of RP){
+      const age=now-r.t,R=age*.4,dx=px-r.x,dy=py-r.y,d=Math.hypot(dx,dy)||1,w=1-Math.abs(d-R)/r.th;
+      if(w>0){const e=Math.pow(Math.max(0,1-age/r.life),1.4)*w*r.amp;fx+=dx/d*e;fy+=dy/d*e}
+    }
+    if(PT.on){const dx=px-PT.x,dy=py-PT.y,d=Math.hypot(dx,dy)||1;if(d<130){const e=Math.pow(1-d/130,2)*.5;fx+=dx/d*e;fy+=dy/d*e}}
+    p.wx=(p.wx+(fx-p.ox*.028)*k)*dm;p.wy=(p.wy+(fy-p.oy*.028)*k)*dm;
+    p.ox+=p.wx*k;p.oy+=p.wy*k;
+    if(!isFinite(p.ox+p.oy+p.wx+p.wy)){p.ox=p.oy=p.wx=p.wy=0}
+    const x=p.x+p.ox,y=p.y+p.oy,m=Math.min(1,Math.hypot(p.ox,p.oy)/40),a=Math.min(1,p.a+m*.5),rr=p.r*(1+m*.7);
+    cx.beginPath();cx.arc(x,y,rr*3.4,0,6.2832);cx.fillStyle=`rgba(${p.c},${(a*.14).toFixed(3)})`;cx.fill();
+    cx.beginPath();cx.arc(x,y,rr,0,6.2832);cx.fillStyle=`rgba(${p.c},${a.toFixed(3)})`;cx.fill();
+  }
+  requestAnimationFrame(dr)
+}
+rz();mp();requestAnimationFrame(dr);addEventListener('resize',()=>{rz();mp()});
+let TT=0,PTO=0;
+const tk=()=>{TT=Date.now()};
+addEventListener('touchstart',e=>{tk();const t=e.touches[0];if(t)pk(t.clientX,t.clientY,true)},{passive:true});
+addEventListener('touchmove',e=>{tk();const t=e.touches[0];if(t)pk(t.clientX,t.clientY,false)},{passive:true});
+addEventListener('touchend',()=>{tk();PT.on=false},{passive:true});
+addEventListener('touchcancel',()=>{tk();PT.on=false},{passive:true});
+// mouse (desktop): ignore the "fake" mouse events phones fire right after a touch
+function mk(e,big){if(Date.now()-TT<900)return;pk(e.clientX,e.clientY,big);clearTimeout(PTO);PTO=setTimeout(()=>{PT.on=false},1400)}
+addEventListener('mousedown',e=>mk(e,true));
+addEventListener('mousemove',e=>mk(e,false));
+document.addEventListener('mouseleave',()=>{PT.on=false});
 
 // ── UNICODE FONT MAPS ──────────────────────────────────────
 const AL='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -613,8 +653,8 @@ function GS(name){
   add('G̷l̷i̷t̷c̷h̷ Light','new',GLT(n,1));
   add('𝕯𝖆𝖗𝖐 Gothic','new',BF(n));
   add('[ Joiner Style ]','new','[ '+JN(n,' ')+ ' ]');
-  add('S¥mß⊕lï¢ Mix','new',[...n].map((c,i)=>[B,I,F,SC,DB][i%5](c)).join(''));
-  add('RΛNDØM Font Mix','new',[...n].map(c=>[B,I,BI,SC,F,FK][Math.floor(Math.random()*6)](c)).join(''));
+  add('S¥mß⊕lï¢ Mix','new',[...n].map((c,i)=>[B,I,F,SCRF,DB][i%5](c)).join(''));
+  add('RΛNDØM Font Mix','new',[...n].map(c=>[B,I,BI,SCRF,F,FK][Math.floor(Math.random()*6)](c)).join(''));
 
   // ── BOLD ──
   add('Bold','bold',B(n));
@@ -882,10 +922,10 @@ function GS(name){
   // ── MIXED / SYMBOLIC ──
   add('S¥mß⊕lï¢','mixed',MXD(n).toUpperCase().replace(/A/g,'Λ').replace(/E/g,'Ξ').replace(/N/g,'И').replace(/R/g,'Я'));
   add('L33t Speak','mixed',MXD2(U));
-  add('Font Mixer 1','mixed',[...n].map((c,i)=>[B,I,F,SC,DB][i%5](c)).join(''));
-  add('Font Mixer 2','mixed',[...n].map((c,i)=>[FK,BF,DB,SC,F][i%5](c)).join(''));
+  add('Font Mixer 1','mixed',[...n].map((c,i)=>[B,I,F,SCRF,DB][i%5](c)).join(''));
+  add('Font Mixer 2','mixed',[...n].map((c,i)=>[FK,BF,DB,SCRF,F][i%5](c)).join(''));
   add('Alt Caps','mixed',[...n].map((c,i)=>i%2?c.toUpperCase():c.toLowerCase()).join(''));
-  add('RAND Font Mix','mixed',[...n].map(c=>[B,I,BI,SC,F,FK,DB][Math.floor(Math.random()*7)](c)).join(''));
+  add('RAND Font Mix','mixed',[...n].map(c=>[B,I,BI,SCRF,F,FK,DB][Math.floor(Math.random()*7)](c)).join(''));
   add('Symbol Replace','mixed',[...n].map(c=>({a:'@',e:'€',i:'¡',o:'⊕',s:'§',t:'†',b:'ß'})[c.toLowerCase()]||c).join(''));
   add('Cyber Text','mixed',[...n].map(c=>({a:'Λ',e:'Ξ',i:'I',o:'O',s:'Ƨ',t:'Τ',n:'И',r:'Я',u:'Ц'})[c.toLowerCase()]||c.toUpperCase()).join(''));
 
@@ -1320,7 +1360,7 @@ function GS(name){
   // ── RANDOM MIX ──
   if(CC==='random'){
     for(let i=0;i<30;i++){
-      const fns=[B,I,BI,F,SC,FK,BF,DB,MN,SB,SBI,WD,BUB,SMC];
+      const fns=[B,I,BI,F,SCRF,FK,BF,DB,MN,SB,SBI,WD,BUB,SMC];
       const fn=fns[Math.floor(Math.random()*fns.length)];
       const frames=[['꧁','꧂'],['🔥','🔥'],['👑','👑'],['★彡','彡★'],['✨','✨'],['【','】'],['꧁👑','👑꧂'],['🌌','🌌'],['⚡','⚡'],['💎','💎'],['彡','彡'],['亗','亗']];
       const fr=frames[Math.floor(Math.random()*frames.length)];
@@ -1366,11 +1406,12 @@ CATS.forEach(c=>{
 });
 
 // ── STATE ──────────────────────────────────────────────────
-let AS=[],CC='all';
+let AS=[],CC='all',DEMO=false;
 let favs=JSON.parse(localStorage.getItem('gf2_fav')||'[]');
 
 function SC2(cat,sb,tab){
   CC=cat;
+  if(cat==='random'){AS=GS(document.getElementById('inp').value.trim()||'Legend');}
   document.querySelectorAll('.sbb').forEach(b=>b.classList.remove('on'));
   if(sb)sb.classList.add('on');
   document.querySelectorAll('.ft').forEach(t=>t.classList.remove('on'));
@@ -1380,36 +1421,103 @@ function SC2(cat,sb,tab){
   RN();
 }
 // alias for sidebar onclick
-function SC(cat,btn){SC2(cat,btn,null);}
+function SCAT(cat,btn){SC2(cat,btn,null);}
 
 function SP(name){document.getElementById('inp').value=name;GN();}
 
 function GN(){
   const v=document.getElementById('inp').value.trim();
   if(!v){const el=document.getElementById('inp');el.focus();el.style.boxShadow='0 0 0 3px rgba(255,80,80,.3)';setTimeout(()=>el.style.boxShadow='',1200);return;}
-  AS=GS(v);RN();
+  DEMO=false;AS=GS(v);RN();
 }
 
 function RN(){
   const area=document.getElementById('res');
   if(CC==='favorites'){SF();return;}
+  if(DEMO&&CC==='all'){RD();return;}
   const fl=CC==='all'?AS:AS.filter(s=>s.cat===CC);
   if(!AS.length){area.innerHTML='<div class="emp"><div class="ei">✨</div><p>Enter your name and hit <strong>Generate</strong><br>to see 500+ stylish nickname variations.</p></div>';return;}
   if(!fl.length){area.innerHTML='<div class="emp"><div class="ei">🔍</div><p>No styles in this category.<br>Try <strong>All</strong>.</p></div>';return;}
-  let h=`<div class="sechd"><h3>✦ Stylish Names</h3><span class="badge2">${fl.length} styles</span></div><div class="grid">`;
-  fl.forEach((s,i)=>{
+  const head=`<div class="sechd"><h3>✦ Stylish Names</h3><span class="badge2">${fl.length} styles</span><button class="dcb" onclick="BT()">↩ Trending</button></div>`;
+  CHUNK(area,head,fl,(s,i)=>{
     const f=favs.includes(s.text);
-    h+=`<div class="nc" style="animation-delay:${Math.min(i*15,600)}ms">
-<div class="nlbl">${EH(s.label)}</div>
-<div class="ntx">${EH(s.text)}</div>
-<div class="nac">
-<button class="bcp" onclick="CP(this,'${EA(s.text)}')">📋 Copy</button>
-<button class="bhrt${f?' on':''}" onclick="FV(this,'${EA(s.text)}')">${f?'❤️':'🤍'}</button>
-</div></div>`;
+    return `<div class="nc" style="animation-delay:${Math.min(i*15,400)}ms"><div class="nlbl">${EH(s.label)}</div><div class="ntx">${EH(s.text)}</div><div class="nac"><button class="bcp" onclick="CP(this,'${EA(s.text)}')">📋 Copy</button><button class="bhrt${f?' on':''}" onclick="FV(this,'${EA(s.text)}')">${f?'❤️':'🤍'}</button></div></div>`;
   });
-  h+='</div>';
-  area.innerHTML=h;
 }
+let RT=0;
+function CHUNK(area,head,list,mk,first){
+  const t=++RT,n=first||36;
+  area.innerHTML=head+'<div class="grid" id="gridx">'+list.slice(0,n).map(mk).join('')+'</div>';
+  const g=area.querySelector('#gridx');let i=n;
+  (function more(){
+    if(t!==RT||i>=list.length)return;
+    const e=Math.min(i+48,list.length);
+    g.insertAdjacentHTML('beforeend',list.slice(i,e).map((x,k)=>mk(x,i+k)).join(''));
+    i=e;requestAnimationFrame(more);
+  })();
+}
+// ── GAMING NAMES DATABASE (shown on first load) ─────────────────
+const GDB=[{"i":"royal","e":"👑","t":"Royal & King","n":["ACEKING","BARON","BISHOP","CAPTAIN","CROWN","DUKE","EMPEROR","EMPRESS","KING","KINGMAKER","KINGSLAYER","LORD","MAGNUS","MAHARAJA","NOBLE","OVERLORD","PALADIN","PRINCE","QUEEN","ROYAL","SULTAN","THRONE","VICTOR","KINGDOM","KINGPIN","QUEENBEE","CROWNED","MONARCH","SOVEREIGN","REGENT","ROYALTY","NOBILITY","MAJESTIC","HIGHNESS","PRIMEKING","ROYALBLOOD","THESULTAN","ROYALFURY","KINGVIBE","QUEENFURY","DARKMONARCH","IRONKING","ROYALX","KINGZ","QUEENOP","CROWNFX","THRONEMAX","IMPERIALPRO","REGALACE","MONARCHYT","SOVEREIGN99","NOBLE7","MAJESTICONE","EMPERORPRIME","PRINCEKING","PRINCESSLORD","DYNASTYGOD","ROYALTYLEGEND","KINGDOMV2","PALACEZERO","HEIREX","REIGNON","CROWNEDX","ROYALISTZ","KINGLYOP","REGENTFX","RULERMAX","LORDPRO","LADYACE","NOBILITYYT","ASCEND99","GOLDEN7","SILVERONE","ROYALBORNPRIME","KINGBORNKING","ROYALHEARTLORD","KINGMAKERGOD","QUEENMAKERLEGEND","CROWNKEEPERV2","KINGDOMXZERO","ROYALACEEX","KINGACEON","CROWNACEX","REGALFURYZ","ROYALFURYOP","KINGFURYFX","QUEENFURYMAX","THRONEFURYPRO","CROWNFORCEACE","ROYALFORCEYT","ROYAL7","KINGONE"]},{"i":"attitude","e":"😈","t":"Attitude & Savage","n":["ANARCHY","BADBOY","BADGIRL","BRUTAL","DANGEROUS","DESPERADO","FEARLESS","HOOLIGAN","INSANITY","MAVERICK","MAYHEM","OUTLAW","REBEL","ROWDY","RUTHLESS","SAVAGE","UNREAL","VANDAL","VICIOUS","WILDCARD","ROYALACE","CROWNED","KINGVIBE","QUEENFURY","FEARLESSX","RUTHLESSZ","SAVAGEOP","REBELFX","TOXICMAX","WILDPRO","BRUTALACE","RELENTLESSYT","UNBROKEN99","UNTAMED7","RECKLESSONE","BOLDPRIME","ROGUEKING","VILLAINLORD","OUTLAWGOD","DOMINANTLEGEND","FERALV2","RAGINGZERO","DARINGEX","NOFEARON","BADASSX","MADZ","ANGRYOP","FIERCEFX","DREADLESSMAX","UNBEATENPRO","UNBOUNDACE","CHAOTICYT","VICIOUS99","MERCILESS7","DEFIANTONE","RAWDOGPRIME","LONEWOLFKING","DARKSIDELORD","WILDFIREGOD","RAGELEGEND","HAVOCV2","MAYHEMZERO","VENOMEX","FURYON","WRATHX","RENEGADEZ","RECKONEROP","DANGEROUSFX","FEARLESSSOULMAX","SAVAGEHEARTPRO","REBELSOULACE","RUTHLESSXYT","WILDBLOOD99","FEARLESSONE"]},{"i":"killer","e":"💀","t":"Killer & Assassin","n":["ASSASSIN","BUTCHER","CARNAGE","DEADSHOT","DEATHBRINGER","DEATHCLAW","DEATHFANG","DEATHLORD","DEATHMACHINE","DEATHRIDER","DEATHSTROKE","DESTROYER","EXECUTIONER","FATALITY","HEADHUNTER","HITMAN","KILLER","KILLZONE","MURDER","PREDATOR","PUNISHER","REAPER","SLAYER","TERMINATOR","BLOODHOUND","BLOODTHIRST","SKULLBREAKER","BONEHUNTER","SOULKILLER","DEATHMARK","DEATHRUSH","FINALBLOW","LASTBREATH","KILLSTREAK","MERCILESS","HEARTBREAKER","COLDKILLER","RAGEKILL","BULLETKING","WARBREAKER","SILENTKILL","KILLMASTER","DEATHZONE","BLOODRAIDER","SHADOWX","BLOODZ","DEATHOP","SKULLFX","BLADEMAX","SILENTPRO","NIGHTACE","SOULYT","BULLET99","DARK7","VENOMONE","CRIMSONPRIME","GHOSTKING","FATALLORD","LETHALGOD","RAVENLEGEND","VIPERV2","SLASHZERO","DREADEX","REAPERON","ASSASSINX","HUNTERZ","STRIKEROP","EXECUTORFX","STALKERMAX","SNIPERPRO","KILLERACE","PHANTOMYT","RIPPER99","FANG7","DAGGERONE","DOOMPRIME","GRIMKING","SCARLORD","VENGEANCEGOD","RUTHLESSLEGEND","SAVAGEV2","WRAITHZERO","OBLIVIONEX","NEMESISON","DEADSHOTX","HEADHUNTERZ","NIGHTFALLOP","SOULREAPERFX","BLOODHOUNDMAX","SKULLCRUSHERPRO","DARKSLAYERACE","SILENTKILLYT","DEATHMARK99","FINALSHOT7"]},{"i":"dark","e":"🌑","t":"Dark & Horror","n":["ABYSS","ABYSSAL","BLACKOUT","CHARON","DARKANGEL","DARKLORD","DARKMATTER","DARKPHOENIX","DARKSOUL","DEMON","DIABLO","DOOM","DRACULA","DREAD","DUSK","EVILGENIUS","GRIM","GRIMREAPER","HELLBOY","HELLFIRE","HELLHOUND","LUCIFER","NIGHTFALL","NIGHTMARE","OBLIVION","SPECTRE","VOID","WRAITH","BLACKSOUL","DARKVEIL","DARKRAVEN","DARKCURSE","SHADOWBORN","SHADOWFALL","SOULLESS","DEADWALKER","NIGHTCRAWLER","NIGHTBRINGER","HELLRAZOR","SOULREAVER","CRYPTKEEPER","DREADFANG","GRAVEBORN","DARKENTITY","BLACKMIST","DARKWHISPER","NIGHTPHANTOM","VOIDWALKER","DARKX","HELLZ","BLACKOP","CRYPTFX","GRAVEMAX","NIGHTPRO","HAUNTEDACE","SHADOWYT","ABYSS99","VOID7","CURSEDONE","DEMONPRIME","WRAITHKING","PHANTOMLORD","GLOOMGOD","DOOMLEGEND","RAVENV2","SINISTERZERO","ECLIPSEEX","DREADON","GHOSTX","SPECTERZ","NIGHTMAREOP","TOMBFX","BANSHEEMAX","HOLLOWPRO","WICKEDACE","INFERNALYT","MACABRE99","MORBID7","OBSCUREONE","DUSKPRIME","MIDNIGHTKING","BLOODMOONLORD","DARKNESSGOD","FORSAKENLEGEND","UNDEADV2","GRIMZERO","SHIVEREX","TERRORON","HEXX","OMENZ","NOCTURNEOP","SHADOWBORNFX","SOULLESSMAX","DEADZONEPRO","BLACKOUTACE","DARKMATTERYT","NIGHTSHADE99","DEATHCALL7"]},{"i":"pro","e":"🎯","t":"Pro Gamer & Competitive","n":["AIMBOT","ACE","ASSAULT","CLUTCH","CONQUEROR","CRACKSHOT","CROSSHAIR","ELITE","FRAGGER","GODLIKE","HEADSHOT","MVP","PRO","PROPLAYER","RUSHER","SHARPSHOOTER","SNIPER","SPRAYER","STRIKER","TACTICAL","TOPFRAGGER","VETERAN","XPERT","QUICKSCOP","AIMKING","AIMLEGEND","FLICKSHOT","TAPMASTER","SPRAYKING","RUSHMASTER","CLUTCHGOD","REFLEXKING","FASTFINGER","LASERAIM","PERFECTAIM","QUICKFIRE","ONEBURST","TRIPLEKILL","QUADRAKILL","PENTAKILL","FINALSHOT","AIMBEAST","PRODIGYKILL","AIMX","HEADSHOTZ","CLUTCHOP","RUSHFX","SNIPERMAX","FRAGPRO","TAPACE","SPRAYYT","QUICK99","RAPID7","TACTICONE","LASERPRIME","PIXELKING","TRIGGERLORD","CROSSHAIRGOD","TARGETLEGEND","SCOPEV2","ACEZERO","PROEX","ELITEON","MVPX","TOPZ","ULTRAOP","HYPERFX","PERFECTMAX","PRECISEPRO","SHARPACE","LEGENDYT","CHAMP99","RANK7","KNOCKONE","BOOYAHPRIME","VICTORYKING","STRIKELORD","BULLETGOD","KILLLEGEND","COMBATV2","ARENAZERO","SKILLEX","REFLEXON","FOCUSX","LOCKZ","BURSTOP","ONEFX","ZEROMAX","FINALPRO","MASTERACE","GODYT","ALPHA99","OMEGA7"]},{"i":"short","e":"⚡","t":"Short & Stylish","n":["AERO","AXE","HEX","KAI","KEN","KNOX","KIRO","LEO","MAX","NEO","NOVA","ONYX","RAI","RAY","REX","ROX","RYU","VEX","XEN","ZAYRO","ZED","ZEN","ZERO","ZEX","ZORAX","ZYX","KAZ","RYX","VYN","ZYN","AXOR","KYRO","ZYRO","NEXO","VYRO","XAVI","RYZEN","ZENO","MYRO","SYRO","TEX","JAX","KEX","VYNN","ZYNX","VEXZ","KRYOP","XYNFX","ZORMAX","RYXPRO","KAZACE","XEVYT","ZYR99","NEX7","VYRONE","QAZPRIME","XARKING","KYXLORD","ZEXGOD","RIXLEGEND","VONV2","XIOZERO","ZIOEX","RYNON","KYOX","ZAYZ","XENOP","VYXFX","JAXMAX","REXPRO","NYXACE","KAIYT","ACE99","AXE7","ZENONE","ROXPRIME","KEXKING","YUZLORD","ZIVGOD","XAVLEGEND","RAYV2","TYXZERO","VEXOEX","ZYKOON","KRYOX","NIXZ","ZEKOP","XENXFX","RYKOMAX","KAZEPRO","ZUNOACE","VYROYT","XIRO99","ZEXO7"]},{"i":"beast","e":"🐉","t":"Beast & Animal","n":["BASILISK","BLACKFANG","BLACKHAWK","BLACKPANTHER","BLACKWOLF","COBRA","DIREWOLF","DRAGON","EAGLE","FALCON","FANG","GARGOYLE","GRIZZLY","HORNET","HYDRA","JAGUAR","LION","MAMBA","PANTHER","RAPTOR","RAVEN","SCORPION","SERPENT","TIGER","VIPER","WOLF","WOLVERINE","YETI","BLACKJAGUAR","DARKCOBRA","SILENTWOLF","FROSTTIGER","WILDCOBRA","RAGINGBULL","LONEPANTHER","IRONLION","FIRETIGER","GOLDENHAWK","SNOWLEOPARD","DARKFALCON","BATTLEWOLF","ALPHAWOLF","WOLFCLAW","RAVENFANG","STORMEAGLE","VENOMCOBRA","NIGHTJAGUAR","SILENTVIPER","WOLFX","TIGERZ","LIONOP","PANTHERFX","COBRAMAX","VIPERPRO","HAWKACE","EAGLEYT","FALCON99","BEAR7","RHINOONE","LEOPARDPRIME","JAGUARKING","FOXLORD","SHARKGOD","DRAGONLEGEND","PHOENIXV2","RAVENZERO","SCORPIONEX","HYENAON","LYNXX","BISONZ","MAMMOTHOP","GORILLAFX","CROCODILEMAX","WILDCATPRO","PUMAACE","KRAKENYT","WYVERN99","STAG7","BULLONE","RAMPRIME","OWLKING","CROWLORD","MANTISGOD","WASPLEGEND","HORNETV2","SABERZERO","FANGEX","CLAWON","ALPHAX","FERALZ","SAVAGEX","IRONFX","GOLDMAX","SILVERPRO","FROSTACE","FIREYT","STORM99","NIGHT7"]},{"i":"fire","e":"🔥","t":"Fire & Elemental","n":["BLAZE","BLUEFIRE","BURNOUT","ELECTRO","FIREBIRD","FIREBLADE","FIRESTORM","FIREWOLF","FLAME","FLARE","FROST","FROSTBITE","FROSTFANG","FROSTGIANT","FROSTKING","FROSTWOLF","HELLSTORM","ICEBERG","ICEBLADE","ICEMAN","INFERNO","LAVA","LIGHTNING","PYRO","SCORCH","STORM","STORMBREAKER","STORMRIDER","THUNDER","THUNDERBOLT","THUNDERFANG","THUNDERGOD","TSUNAMI","TYPHOON","VOLCANO","WILDFIRE","MAGMA","FIREBOLT","ASHBLAZE","EMBER","FIRENOVA","LAVAFURY","ICEFURY","FROSTNOVA","SOLARFLARE","STARBURST","SKYTHUNDER","INFERNOX","FROSTBURN","ELECTRICX","THUNDERCLAP","FLAMEBORN","FIRESTRIKE","ASHSTORM","SOLARIS","CRYO","FIREX","FLAMEZ","INFERNOOP","EMBERFX","BLAZEMAX","LAVAPRO","MAGMAACE","ASHYT","FROST99","ICE7","THUNDERONE","STORMPRIME","LIGHTNINGKING","VOLTLORD","SPARKGOD","SOLARLEGEND","LUNARV2","CYCLONEZERO","TORNADOEX","QUAKEON","TIDALX","OCEANZ","WAVEOP","AQUAFX","HYDROMAX","CRYOPRO","PYROACE","GEOYT","AERO99","NOVA7","COMETONE","METEORPRIME","COSMICKING","PLASMALORD","ENERGYGOD","RADIANTLEGEND","SCORCHV2","BURNZERO","GLACIEREX","AVALANCHEON","TEMPESTX","MONSOONZ","HAILOP","BLIZZARDFX","ECLIPSEMAX","AURORAPRO","RIFTACE","VORTEXYT","FUSION99","ELEMENT7"]},{"i":"warrior","e":"⚔️","t":"Warrior & Military","n":["ARCHER","ARMAGEDDON","ARSENAL","BATTLEAXE","BATTLEKING","BATTLELORD","BATTLEGOD","BERSERKER","BLADER","BLADEMASTER","BRAWLER","BRUISER","COMMANDO","CRUSADER","FORTRESS","GLADIATOR","GUNNER","GUNMASTER","GUNSLINGER","IRONCLAD","IRONFIST","JUGGERNAUT","KNIGHT","LANCER","MERCENARY","RAIDER","RONIN","SAMURAI","SOLDIER","SPARTAN","TROOPER","VANGUARD","WARHAMMER","WARLORD","WARRIOR","WARMASTER","BATTLEFIELD","WARZONEKING","COMMANDERX","FRONTLINE","BATTLEGROUND","IRONCOMMANDER","TACTICIAN","BATTLEHARD","RIFLEMAN","SHIELDWALL","WARGENERAL","ARMYCHIEF","GUNFIGHTER","COMBATKING","BATTLEFURY","SWORDSMAN","BLADEHUNTER","WARVETERAN","FIELDGENERAL","WARX","IRONZ","STEELOP","BATTLEFX","SWORDMAX","SHIELDPRO","ARMORACE","TACTICALYT","COMBAT99","COMMANDO7","SOLDIERONE","GENERALPRIME","CAPTAINKING","MAJORLORD","COLONELGOD","MARSHALLEGEND","VANGUARDV2","LEGIONZERO","BRIGADEEX","REGIMENTON","RAIDERX","RANGERZ","GUARDOP","SENTINELFX","KNIGHTMAX","PALADINPRO","BERSERKERACE","GLADIATORYT","WARRIOR99","FIGHTER7","DEFENDERONE","STRIKERPRIME","FRONTLINEKING","BATTALIONLORD","ARSENALGOD","SIEGELEGEND","FORTRESSV2","BLADEZERO","SPEAREX","AXEON","HAMMERX","LANCERZ","WARLORDOP","CHIEFTAINFX","COMMANDERMAX","SCOUTPRO","RECONACE","PATRIOTYT","CENTURION99","TROOPER7"]},{"i":"ghost","e":"👻","t":"Ghost & Phantom","n":["BANSHEE","ECHO","GHOST","GHOSTRIDER","GHOSTWALKER","HAZE","INVISIBLE","MIRAGE","MIST","PHANTOM","PHANTOMX","SILENT","SHADOW","SHADOWX","SPECTRE","STEALTH","UNKNOWN","WRAITHKING","GHOSTZ","PHANTOMZ","WRAITHOP","SPECTERFX","SPIRITMAX","POLTERGEISTPRO","APPARITIONACE","SHADEYT","ECHO99","MIST7","FOGONE","HAUNTPRIME","SOULKING","ASTRALLORD","ETHEREALGOD","VEILLEGEND","WHISPERV2","SILENTZERO","HOLLOWEX","WANDERERON","NIGHTX","DUSKZ","DARKOP","SHADOWFX","FADINGMAX","VANISHPRO","INVISIBLEACE","SPECTRALYT","MYSTIC99","CRYPTIC7","LOSTONE","LONEPRIME","MOONKING","RAVENLORD","GRAVEGOD","CURSEDLEGEND","VEILEDV2","WISPZERO","DRIFTEX","PHASEON","VOIDX","AFTERLIFEZ","UNSEENOP","RESTLESSFX","FORGOTTENMAX","WINDPRO","COLDACE","MIDNIGHTYT","ETERNAL99","PHANTOMX7"]},{"i":"scifi","e":"🚀","t":"Sci-Fi & Futuristic","n":["ANDROID","ASTEROID","ASTRAL","ATOMIC","CYBER","CIPHER","CIRCUIT","COMET","COSMIC","GALACTIC","GLITCH","HYPER","MATRIX","MEGATRON","NEBULA","NEON","NEUTRON","NUCLEAR","ORBIT","PLASMA","PIXEL","QUANTUM","QUASAR","SUPERNOVA","VORTEX","CYBERNOVA","TECHNOX","NEONBLADE","CYBERPUNK","MECHWARRIOR","ROBOTRON","STARFORCE","STELLAR","ASTROX","MOONWALKER","DARKNEBULA","STARLORD","HYPERNOVA","CYBERGHOST","NEXUS","PROTON","IONIC","GALAXOR","ASTRIX","ZENTRON","CYBERX","NEONZ","QUANTUMOP","NANOFX","MECHAMAX","ASTROPRO","GALAXYACE","COSMICYT","NEXUS99","TECHNO7","DIGITALONE","ROBOTPRIME","ANDROIDKING","SYNTHLORD","MATRIXGOD","HOLOLEGEND","LASERV2","PLASMAZERO","ORBITEX","STARON","LUNARX","SOLARZ","STELLAROP","NOVAFX","PULSEMAX","VECTORPRO","CIRCUITACE","PIXELYT","GLITCH99","PROTOCOL7","HYPERONE","ULTRAPRIME","OMEGAKING","ALPHALORD","ZEROGOD","INFINITYLEGEND","CHROMEV2","TITANIUMZERO","IONICEX","ATOMICON","FUSIONX","REACTORZ","ENGINEOP","DRONEFX","QUASARMAX","NEBULAPRO","ASTRALACE","CYBERNETICYT","FUTURE99","XENON7"]},{"i":"legend","e":"🏆","t":"Powerful & Legendary","n":["APEX","ATLAS","AVENGER","CHAMPION","CHRONOS","COLOSSUS","DOMINATOR","ETERNAL","ETERNITY","EXCALIBUR","GOLIATH","HERCULES","IMMORTAL","INFINITY","ODIN","ORACLE","PHOENIX","PROMETHEUS","RAGNAROK","TITAN","ZEUS","ZODIAC","TITANLORD","GODFURY","MYTHOS","ASCENDANT","ETERNALX","INVICTUS","INFINITYX","CELESTIAL","DIVINITY","GODSLAYER","IMMORTALSOUL","LEGACY","UNIVERSE","SUPREMACY","OMNIPOTENT","OVERDRIVE","TRANSCEND","ASCENSION","ETERNALKING","MYTHICLORD","TITANX","GODLIKEZ","DIVINEOP","ETERNALFX","IMMORTALMAX","MYTHICPRO","LEGENDACE","SUPREMEYT","INVICTUS99","ASCENDANT7","CELESTIALONE","OMNIPRIME","INFINITEKING","APEXLORD","ULTIMATEGOD","PRIMELEGEND","ORACLEV2","VALORZERO","GLORYEX","DESTINYON","HEROICX","MIGHTYZ","SOVEREIGNOP","MONOLITHFX","COLOSSUSMAX","BEHEMOTHPRO","ATLASACE","HERCULESYT","ZEUS99","ODIN7","THORONE","ARESPRIME","POSEIDONKING","HADESLORD","RAGOD","ANUBISLEGEND","FENRIRV2","PEGASUSZERO","GRIFFINEX","LEVIATHANON","GOLIATHX","PHOENIXZ","DRAGONLORDOP","OVERLORDFX","EMINENCEMAX","PARAGONPRO","GODMODEACE","TRANSCENDYT","OMNIPOTENT99","LEGACY7"]},{"i":"ninja","e":"🥷","t":"Ninja & Samurai","n":["AKUMA","ASHURA","BUSHIDO","HANZO","KAGE","KATANA","KENSHIN","KUNOICHI","MUSASHI","NINJA","ONI","RAIJIN","SHINOBI","SHOGUN","SHURIKEN","YAKUZA","YAMI","NINJAX","SHINOBIZ","SAMURAIOP","RONINFX","SHOGUNMAX","KATANAPRO","KAGEACE","ONIYT","YAMI99","KUNOICHI7","BUSHIDOONE","DOJOPRIME","SENSEIKING","TANTOLORD","NODACHIGOD","KENDOLEGEND","KENSHIV2","RYUZERO","HAYATEEX","AKUMAON","KITSUNEX","TENGUZ","RAIJINOP","FUJINFX","TSUKIMAX","HIKARIPRO","KURAIACE","KUROYT","SHIRO99","YUREI7","TATSUONE","MIZUPRIME","HOSHIKING","KAZELORD","SORAGOD","TAKUMILEGEND","MUSASHIV2","HANZOZERO","JINEX","KENJION","AKIRAX","RENZ","HARUOP","YORUFX","KAIMAX","SHINPRO","REIACE","ZENYT","KAGEYAMA99","YAMIKAZE7"]},{"i":"love","e":"❤️","t":"Love & Emotional","n":["ALONE","ANGEL","BROKENHEART","CUTIE","DREAMER","FOREVER","HEARTLESS","LONELY","LOVEBOY","LOVEGIRL","LOVER","LOVEBIRDS","MOONLIGHT","ROMEO","SOULMATE","SWEETHEART","LONEX","LOSTZ","BROKENOP","SILENTFX","SADMAX","DARKPRO","TRUEACE","LASTYT","FADED99","EMPTY7","LONELYONE","HEARTPRIME","SOULX","LOVELORD","TEARGOD","ANGELLEGEND","DREAMV2","MEMORYZERO","FOREVEREX","MOONON","STARX","RAINZ","ASHENOP","COLDFX","FAKEMAX","PUREPRO","DEEPACE","HIDDENYT","SECRET99","WISH7","HOPEONE","PAINPRIME","SORROWKING","MELANCHOLYLORD","ECHOGOD","GOODBYELEGEND","MISSV2","ALONEZERO","BLUEEX","CRYON","FRAGILEX","GENTLEZ","ETERNALOP","ENDLESSFX","FAITHMAX","TRUSTPRO","PROMISEACE","REGRETYT","HEARTLESS99","LOVER7"]},{"i":"funny","e":"😂","t":"Funny & Troll","n":["AFK","BOT","CHICKEN","CHICKENLORD","DONKEY","FUNNYBOY","LAGGER","LOLKING","MONKEY","NOOB","NOOBMASTER","NOBRAIN","NOBODY","PANDA","PINGKING","POTATO","PRO_NOOB","WIFI","SLEEPYHEAD","BOTTARGET","LAGMASTER","PINGMONSTER","AFKKING","CAMPINGPRO","MISSAIM","BULLETMISS","PANICKING","RUNAWAY","HIDEANDSEEK","CHICKENHUNTER","LOOTGOBLIN","HEALINGNOOB","REVIVEME","LASTNOOB","BOTSLAYER","SQUADFOOD","NOOBX","BOTZ","CHICKENOP","POTATOFX","BANANAMAX","MONKEYPRO","DONKEYACE","TURTLEYT","SLEEPY99","LAZY7","AFKONE","LAGPRIME","CAMPERLORD","LOOTGOD","REVIVELEGEND","PANICV2","MIMIZERO","CLUMSYEX","GOOFYON","SILLYX","DERPZ","MEMEOP","JOKERFX","TROLLMAX","BUBBLEPRO","WAFFLEACE","PICKLEYT","NACHO99","COOKIE7","MANGOONE","BOSSPRIME","UNCLEKING","AUNTYLORD","GRANDPAGOD","PANDALEGEND","DUCKV2","GOOSEZERO","PIGEONEX","FROGON","HAMSTERX","PUPPYZ","KITTYOP","TOFUFX","NOODLEMAX","BURGERPRO","PIZZAACE","SAMOSAYT","CHAI99","GIGGLE7"]},{"i":"desi","e":"🇮🇳","t":"Indian & Desi Gaming","n":["BAAZIGAR","BADSHAH","BHAUKAAL","DABANGG","DESIBOY","DESIGAMER","DESIKILLER","GABBAR","HINDUSTANI","JATT","JIGAR","KHALNAYAK","MARATHA","RAJA","RAJPUT","SARKAR","SHER","SHERDIL","SIKANDAR","TOOFAN","YODDHA","DESIDON","DESIBADSHAH","INDIANKING","BENGALTIGER","BANGALIBOY","BANGALIGAMER","BENGALDON","DESIMONSTER","DESIWARRIOR","DESIRAJA","DESISULTAN","HINDIKILLER","JAIHIND","VEER","MAHAVEER","RANVEER","RUDRA","AGHORI","KALBHAIRAV","MAHAKAAL","TRISHUL","VAJRA","AGNI","GARUDA","CHAKRAVYUH","DESIX","HINDIZ","BHARATOP","HINDUSTANFX","BENGALMAX","BANGLAPRO","PUNJABIACE","MARATHAYT","RAJPUT99","SIKH7","VEERONE","BAAZPRIME","SHERKING","BAHADURLORD","YODDHAGOD","RUDRALEGEND","MAHADEVV2","SHIVAZERO","SHANKAREX","KALION","DURGAX","ARJUNZ","KARNAOP","ABHIMANYUFX","ASHOKAMAX","CHANDRAPRO","SURYAACE","AGNIYT","VAJRA99","TRISHUL7","GARUDAONE","NAGAPRIME","RAJAKING","RANILORD","BADSHAHGOD","NAWABLEGEND","SULTANV2","JAWANZERO","SENANIEX","RANVEERON","DESIBOSSX","GABBARZ","SINGHAMOP","BAAZIGARFX","JIGARMAX","DILERPRO","FAUJIACE","DHAKADYT","JATT99","BHAI7"]},{"i":"anime","e":"🎌","t":"Anime Gaming","n":["AKAZA","AKIRA","EREN","GOJO","ITACHI","KAKASHI","LEVI","LUFFY","MADARA","MEGUMI","MIKASA","MINATO","NARUTO","OBITO","RENGOKU","SANJI","SASUKE","SUKUNA","TANJIRO","TOJI","YUJI","ZORO","KURAMA","SHISUI","HASHIRAMA","TOBIRAMA","JIRAIYA","OROCHIMARU","GAARA","NEJI","ROCKLEE","KILLUA","GON","HISOKA","KURAPIKA","MERUEM","YUTA","YUTAOKKOTSU","MAKI","NANAMI","CHOSO","GETO","GOKU","VEGETA","BROLY","GOHAN","TRUNKS","ICHIGO","ULQUIORRA","GRIMMJOW","KENPACHI","RYUK","LIGHTYAGAMI","L","NEZUKO","ZENITSU","INOSUKE","NARUTOX","SASUKEZ","SAKURAOP","KAKASHIFX","ITACHIMAX","MADARAPRO","OBITOACE","MINATOYT","JIRAIYA99","TSUNADE7","GAARAONE","NEJIPRIME","HINATAKING","TANJIROLORD","ZENITSUGOD","INOSUKELEGEND","NEZUKOV2","GIYUZERO","RENGOKUEX","AKAZAON","MUZANX","DENJIZ","POWEROP","MAKIMAFX","AKIMAX","GOJOPRO","GETOACE","YUJIYT","MEGUMI99","NOBARA7","SUKUNAONE","YUTAPRIME","MIKASAKING","ERENLORD","LEVIGOD","ARMINLEGEND","KIRITOV2","ASUNAZERO","KANEKIEX","TOUKAON","LUFFYX","ZOROZ","SANJIOP","NAMIFX","SABOMAX","ACEPRO","GOKUACE","VEGETAYT","GOHAN99","TRUNKS7"]},{"i":"clan","e":"🛡️","t":"Clan & Guild","n":["BLOODLINE","DARKARMY","DEATHSQUAD","DESTINY","ELITEFORCE","GODSQUAD","HELLRAISERS","IMMORTALS","KINGSQUAD","LEGION","NIGHTRAIDERS","PHANTOMS","REBELS","ROYALFORCE","SHADOWCLAN","TITANS","VENOMCLAN","VENGEANCE","WARZONE","WARRIORS","DEATHLEGION","ROYALLEGION","SHADOWFORCE","DARKVANGUARD","ELITEWARRIORS","BLOODREBELS","IRONLEGION","NIGHTFORCE","WARCOMMAND","GHOSTSQUAD","FIRELEGION","SILENTFORCE","RAGEUNIT","OMEGASQUAD","ALPHACLUB","DARKSYNDICATE","ROYALSYNDICATE","CHAOSCREW","WOLFBRIGADE","TITANFORCE","BLACKX","DARKZ","SHADOWOP","BLOODFX","IRONMAX","CHAOSPRO","OMEGAACE","ALPHAYT","NIGHT99","FIRE7","GHOSTONE","WOLFPRIME","STORMKING","ROYALLORD","ELITEGOD","SILENTLEGEND","PHANTOMV2","CRIMSONZERO","FROSTEX","VENOMON","THUNDERX","VOIDZ","RAVENOP","DRAGONFX","TITANMAX","SKULLPRO","LEGENDX","WARYT","DEATH99","SOLAR7","LUNARONE","NOVAPRIME","APEXKING","CYBERLORD","ASTROGOD","STEELLEGEND","GOLDENV2","SILVERZERO","SAVAGEEX","DIVINEON","HIDDENX","WILDZ","FATALOP","SUPREMEFX","ETERNALMAX","UNITEDPRO","UNITEDXACE","REAPERYT","VANGUARD99","REBORN7"]},{"i":"space","e":"🌌","t":"Nature & Space","n":["MOONLIGHTX","SUNSTRIKE","STARHUNTER","COSMICRAY","SKYBLAZER","OCEANKING","DEEPSEA","EARTHSHAKER","SOLARWOLF","LUNARKING","STARDUST","MILKYWAY","BLACKHOLE","ASTRALWOLF","NORTHSTAR","POLARBEAR","RAINFOREST","WINDRIDER","SKYFALLX","SUNX","MOONZ","STAROP","SKYFX","OCEANMAX","GALAXYPRO","COSMICACE","SOLARYT","LUNAR99","METEOR7","COMETX","POLARPRIME","WINDKING","AURORALORD","NOVAGOD","NEBULALEGEND","ORBITV2","ASTRALZERO","ECLIPSEX","CLOUDON","RAINX","THUNDERZ","FORESTOP","JUNGLEFX","RIVERMAX","MOUNTAINPRO","DESERTACE","CANYONYT","GLACIER99","VOLCANO7","TIDALONE","CORALPRIME","REEFKING","BLOSSOMLORD","MAPLEGOD","CEDARLEGEND","BAMBOOV2","LOTUSZERO","FERNEX","IVYON","BIRCHX","WILLOWZ","OAKOP","PINEFX","DAWNMAX","DUSKPRO","HORIZONACE","ZENITHYT","EQUINOX99","SUNONE"]},{"i":"modern","e":"✨","t":"Unique Modern Names","n":["ZEPHYR","KRYPTON","VYRON","XAVION","ZYREX","KRYZEN","NEXAR","VEXON","ZORVEN","KYZEN","RYVEX","XERON","ZAVEN","TYRIX","ZYVON","KAVIX","XENTOR","VAYRON","ZEXAR","NYXOR","ZAVX","KRYZ","XENX","ZYVFX","VEXMAX","NEXPRO","ZAYACE","KAVYT","XOR99","ZYR7","KYVONE","RYZPRIME","XAVKING","VAYLORD","ZEXX","NIXLEGEND","QORV2","JYNZERO","TYVEX","VORON","ZORX","XIRZ","KEXOP","YORFX","ZYNMAX","RAVPRO","QYXACE","XAZYT","VYX99","ZIQ7","KYNONE","XEVPRIME","RYVKING","ZIKLORD","QAZGOD","XONLEGEND","KAZV2","ZYXZERO","AVOEX","EVOON","IXOX","UVOZ","YEXOP","QINFX","KROMAX","XUMPRO","VYRACE","ZAV99","KRY7","XENONE"]}];
+const GTR=[[0,"BARON"],[0,"OVERLORD"],[0,"REGENT"],[1,"BADBOY"],[1,"MAVERICK"],[1,"VANDAL"],[2,"BUTCHER"],[2,"HITMAN"],[2,"DEATHMARK"],[3,"ABYSSAL"],[3,"GRIM"],[3,"SHADOWBORN"],[4,"ACE"],[4,"SHARPSHOOTER"],[4,"RUSHMASTER"],[5,"AXE"],[5,"ROX"],[5,"ZYN"],[6,"BLACKFANG"],[6,"MAMBA"],[6,"RAGINGBULL"],[7,"BLUEFIRE"],[7,"ICEMAN"],[7,"FIREBOLT"],[8,"ARMAGEDDON"],[8,"IRONCLAD"],[8,"WARZONEKING"],[9,"ECHO"],[9,"MIRAGE"],[9,"SHADOWX"],[10,"ASTEROID"],[10,"NEUTRON"],[10,"STARFORCE"],[11,"ATLAS"],[11,"ORACLE"],[11,"CELESTIAL"],[12,"ASHURA"],[12,"KENSHIN"],[12,"RAIJIN"],[13,"ANGEL"],[13,"HEARTLESS"],[13,"LOVEBIRDS"],[14,"BOT"],[14,"PANDA"],[14,"BULLETMISS"],[15,"BADSHAH"],[15,"RAJA"],[15,"BANGALIBOY"],[16,"AKIRA"],[16,"TOJI"],[16,"YUTAOKKOTSU"],[17,"DARKARMY"],[17,"SHADOWCLAN"],[17,"NIGHTFORCE"],[18,"SUNSTRIKE"],[18,"EARTHSHAKER"],[18,"ASTRALWOLF"],[19,"KRYPTON"],[19,"VEXON"],[19,"TYRIX"]];
+
+const GFR={
+ royal:['♛{n}♛','꧁👑{n}👑꧂','👑{n}','♔{n}♔','【{n}】♛','♚{n}♚','⚜{n}⚜'],
+ attitude:['😈{n}😈','꧁{n}꧂','☠{n}☠','🔥{n}🔥','彡{n}彡','乂{n}乂','☬{n}☬'],
+ killer:['☠{n}☠','⚔{n}⚔','💀{n}💀','🎯{n}🎯','꧁☠{n}☠꧂','乂{n}乂','彡{n}彡'],
+ dark:['🌑{n}🌑','☾{n}☽','꧁☠{n}☠꧂','🖤{n}🖤','⛧{n}⛧','☬{n}☬','༒{n}༒'],
+ pro:['🎯{n}🎯','⚡{n}⚡','【{n}】','『{n}』','★{n}★','✪{n}✪','🏆{n}'],
+ short:['{n}','乂{n}乂','{n}ツ','★{n}','{n}⚡','『{n}』','彡{n}','✦{n}✦'],
+ beast:['🐾{n}🐾','꧁{n}꧂','⚔{n}⚔','🔥{n}🔥','【{n}】','🌑{n}🌑','🐾{n}'],
+ fire:['🔥{n}🔥','⚡{n}⚡','❄{n}❄','🌋{n}🌋','🌪{n}🌪','☄{n}☄','꧁{n}꧂'],
+ warrior:['⚔{n}⚔','🛡{n}🛡','🗡{n}','꧁{n}꧂','『{n}』','★{n}★','乂{n}乂'],
+ ghost:['👻{n}👻','🌫{n}🌫','☁{n}☁','꧁{n}꧂','☾{n}☽','👁{n}👁'],
+ scifi:['🚀{n}🚀','🛸{n}🛸','⚡{n}⚡','【{n}】','◤{n}◢','✦{n}✦','⌬{n}⌬'],
+ legend:['⚡{n}⚡','👑{n}👑','♛{n}♛','🔱{n}🔱','꧁{n}꧂','✪{n}✪','★彡{n}彡★'],
+ ninja:['🥷{n}🥷','⛩{n}⛩','🗡{n}','乂{n}乂','彡{n}彡','【{n}】','☬{n}☬'],
+ love:['❤{n}❤','♡{n}♡','💔{n}💔','🌹{n}🌹','💖{n}💖','✿{n}✿','❣{n}❣'],
+ funny:['😂{n}😂','🤡{n}🤡','🐔{n}🐔','😜{n}😜','🥔{n}🥔','💀{n}😂','🤪{n}🤪'],
+ desi:['꧁{n}꧂','♛{n}♛','🦁{n}🦁','🔥{n}🔥','⚡{n}⚡','【{n}】','彡{n}彡'],
+ anime:['🎌{n}🎌','⛩{n}⛩','彡{n}彡','✦{n}✦','꧁{n}꧂','【{n}】','☆{n}☆'],
+ clan:['【{n}】','⚔{n}⚔','🛡{n}🛡','꧁{n}꧂','♛{n}♛','☬{n}☬','『{n}』'],
+ space:['🌙{n}🌙','⭐{n}⭐','🌌{n}🌌','☄{n}☄','🌊{n}🌊','🌿{n}🌿','✦{n}✦'],
+ modern:['✦{n}✦','◈{n}◈','⟡{n}⟡','【{n}】','⌬{n}⌬','꧁{n}꧂','♢{n}♢']
+};
+const GKW=[[/WOLF/,'🐺'],[/TIGER/,'🐯'],[/LION|LEO(?!PARD)/,'🦁'],[/EAGLE|FALCON|HAWK|OWL|CROW|RAVEN/,'🦅'],[/COBRA|VIPER|SERPENT|MAMBA/,'🐍'],[/DRAGON|HYDRA|BASILISK|WYVERN/,'🐉'],[/PANTHER|JAGUAR|LEOPARD|PUMA|LYNX|WILDCAT/,'🐆'],[/SCORPION/,'🦂'],[/BEAR|GRIZZLY/,'🐻'],[/SHARK/,'🦈'],[/FOX/,'🦊'],[/GORILLA/,'🦍'],[/CROCODILE/,'🐊'],[/HORNET|WASP/,'🐝'],[/KRAKEN/,'🐙'],[/VOLCANO/,'🌋'],[/FIRE|FLAME|BLAZE|LAVA|INFERNO|EMBER|MAGMA|PYRO|SCORCH|BURN/,'🔥'],[/FROST|ICE|CRYO|GLACIER|BLIZZARD|HAIL/,'❄'],[/THUNDER|LIGHTNING|ELECTRO|VOLT|SPARK/,'⚡'],[/STORM|TYPHOON|CYCLONE|TORNADO|TEMPEST/,'🌪'],[/OCEAN|TSUNAMI|WAVE|TIDAL|AQUA|HYDRO|DEEPSEA/,'🌊'],[/SOLAR|SUN/,'☀'],[/LUNAR|MOON/,'🌙'],[/METEOR|COMET/,'☄']];
+function GM(t,m){
+  if(m==='p')return t;
+  const o=[...t].map(c=>{
+    const k=c.charCodeAt(0);
+    if(k>=65&&k<=90){const i=k-65;return m==='b'?String.fromCodePoint(0x1D400+i):m==='s'?String.fromCodePoint(0x1D5D4+i):({C:'ℂ',H:'ℍ',N:'ℕ',P:'ℙ',Q:'ℚ',R:'ℝ',Z:'ℤ'}[c]||String.fromCodePoint(0x1D538+i));}
+    if(k>=48&&k<=57){const d=k-48;return String.fromCodePoint((m==='b'?0x1D7CE:m==='s'?0x1D7EC:0x1D7D8)+d);}
+    return c;
+  });
+  return o.join('');
+}
+function GDEC(ci,n){
+  const id=GDB[ci].i;let h=0;for(const c of n)h=(h*31+c.charCodeAt(0))>>>0;
+  const fr=GFR[id];let frame=fr[h%fr.length];
+  if(id==='beast'||id==='fire'||id==='space'){for(const [re,e] of GKW){if(re.test(n)){frame=e+'{n}'+e;break;}}}
+  if(id==='desi'&&/BENGAL|BANGLA|BANGALI|DHAKA/.test(n))frame='🇧🇩{n}🇧🇩';
+  const fonts=['p','p','b','d','s','p','b'];
+  return frame.split('{n}').join(GM(n,fonts[(h>>3)%fonts.length]));
+}
+let GCUR='tr';
+function RD(){
+  const area=document.getElementById('res');
+  let items;
+  if(GCUR==='tr'){items=GTR.map(x=>({ci:x[0],n:x[1]}));}
+  else{const ci=GDB.findIndex(c=>c.i===GCUR);items=GDB[ci].n.map(n=>({ci,n}));}
+  const total=GDB.reduce((a,c)=>a+c.n.length,0);
+  let h='<div class="sechd dsh"><h3 class="dh">🔥 Trending Gaming Names</h3><span class="badge2">'+total+' names to copy</span></div>';
+  h+='<div class="dcats"><span class="dc'+(GCUR==='tr'?' on':'')+'" onclick="SDC(\'tr\')">🔥 Trending</span>'+GDB.map(c=>'<span class="dc'+(GCUR===c.i?' on':'')+'" onclick="SDC(\''+c.i+'\')">'+c.e+' '+EH(c.t)+' ('+c.n.length+')</span>').join('')+'</div>';
+  h+='<p class="dnote">Tap <strong>Copy</strong> on any name. Want it with your own name? Type it above and hit <strong>Generate</strong>.</p>';
+  CHUNK(area,h,items,(x,i)=>{
+    const t=GDEC(x.ci,x.n),f=favs.includes(t);
+    return '<div class="nc" style="animation-delay:'+Math.min(i*12,400)+'ms"><div class="nlbl">'+EH(GDB[x.ci].t)+'</div><div class="ntx">'+EH(t)+'</div><div class="nac"><button class="bcp" onclick="CP(this,\''+EA(t)+'\')">📋 Copy</button><button class="bhrt'+(f?' on':'')+'" onclick="FV(this,\''+EA(t)+'\')">'+(f?'❤️':'🤍')+'</button></div></div>';
+  });
+}
+function SDC(id){GCUR=id;RD();}
+function BT(){DEMO=true;GCUR='tr';CC='all';document.querySelectorAll('.ft').forEach(t=>t.classList.toggle('on',t.dataset.cat==='all'));RN();}
 
 function SF(){
   const area=document.getElementById('res');
@@ -1419,9 +1527,14 @@ function SF(){
   h+='</div>';area.innerHTML=h;
 }
 
-function CA(){document.getElementById('inp').value='';AS=[];CC='all';document.querySelectorAll('.ft').forEach(t=>t.classList.toggle('on',t.dataset.cat==='all'));document.getElementById('res').innerHTML='<div class="emp"><div class="ei">✨</div><p>Enter your name and hit <strong>Generate</strong><br>to see 500+ stylish nickname variations.</p></div>';}
+function CA(){document.getElementById('inp').value='';CC='all';document.querySelectorAll('.ft').forEach(t=>t.classList.toggle('on',t.dataset.cat==='all'));DEMO=true;AS=GS('Legend');RN();}
 
-function CP(btn,tx){navigator.clipboard.writeText(tx).then(()=>{const o=btn.innerHTML;btn.innerHTML='✓ Copied!';btn.classList.add('ok');setTimeout(()=>{btn.innerHTML=o;btn.classList.remove('ok');},1500);})}
+function CP(btn,tx){
+  const ok=()=>{const o=btn.innerHTML;btn.innerHTML='✓ Copied!';btn.classList.add('ok');setTimeout(()=>{btn.innerHTML=o;btn.classList.remove('ok');},1500)};
+  const last=()=>{try{prompt('Copy this name:',tx)}catch(e){}};
+  const fb=()=>{try{const a=document.createElement('textarea');a.value=tx;a.setAttribute('readonly','');a.style.cssText='position:fixed;top:0;left:0;opacity:0';document.body.appendChild(a);a.focus();a.select();a.setSelectionRange(0,tx.length);const r=document.execCommand('copy');document.body.removeChild(a);r?ok():last()}catch(e){last()}};
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(tx).then(ok,fb)}else fb();
+}
 
 function FV(btn,tx){const i=favs.indexOf(tx);if(i<0){favs.push(tx);btn.innerHTML='❤️';btn.classList.add('on');}else{favs.splice(i,1);btn.innerHTML='🤍';btn.classList.remove('on');}localStorage.setItem('gf2_fav',JSON.stringify(favs));}
 
@@ -1431,7 +1544,10 @@ function EA(s){return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
 // Enter + debounce live
 document.getElementById('inp').addEventListener('keydown',e=>{if(e.key==='Enter')GN();});
 let dt;
-document.getElementById('inp').addEventListener('input',()=>{clearTimeout(dt);dt=setTimeout(()=>{if(document.getElementById('inp').value.trim().length>=2)GN();},380);});
+document.getElementById('inp').addEventListener('input',()=>{clearTimeout(dt);dt=setTimeout(()=>{const v=document.getElementById('inp').value.trim();if(v.length>=2)GN();else if(v.length===0)BT();},380);});
+
+// first view: show trending styles for a sample name so the page is never empty
+DEMO=true;AS=GS('Legend');RN();
 
 // ── SYMBOL GRID RENDER ──────────────────────────────────────
 window.addEventListener('DOMContentLoaded',function(){
